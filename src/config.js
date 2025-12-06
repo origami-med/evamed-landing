@@ -267,10 +267,37 @@ export const config = {
     description: "India's most Doctor Friendly EMR",
     copyright: "© 2025 by Innovea Logitech",
     social: [
-      { name: "Email", icon: "✉", href: "mailto:contactus@evamed.in", ariaLabel: "Gmail" },
-      { name: "YouTube", icon: "▶", href: "https://www.youtube.com/@evamed-emr", ariaLabel: "Youtube", target: "_blank" },
-      { name: "Instagram", icon: "📷", href: "https://www.instagram.com/evamed.tech/", ariaLabel: "Instagram", target: "_blank" },
-      { name: "Facebook", icon: "f", href: "https://www.facebook.com/profile.php?id=61578981484207", ariaLabel: "Facebook", target: "_blank" },
+      { 
+        name: "Email", 
+        icon: "✉", 
+        imageUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg",
+        href: "mailto:contactus@evamed.in", 
+        ariaLabel: "Gmail" 
+      },
+      { 
+        name: "YouTube", 
+        icon: "▶", 
+        imageUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg",
+        href: "https://www.youtube.com/@evamed-emr", 
+        ariaLabel: "Youtube", 
+        target: "_blank" 
+      },
+      { 
+        name: "Instagram", 
+        icon: "📷", 
+        imageUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg",
+        href: "https://www.instagram.com/evamed.tech/", 
+        ariaLabel: "Instagram", 
+        target: "_blank" 
+      },
+      { 
+        name: "Facebook", 
+        icon: "f", 
+        imageUrl: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg",
+        href: "https://www.facebook.com/profile.php?id=61578981484207", 
+        ariaLabel: "Facebook", 
+        target: "_blank" 
+      },
     ],
   },
 

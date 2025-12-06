@@ -35,19 +35,25 @@
           </li>
         </ul>
       </div>
-      <div>
+      <div class="flex flex-col">
         <h3 class="font-display mb-4 text-text-primary">Connect</h3>
-        <div class="footer-social flex gap-4">
+        <div class="footer-social flex gap-4 flex-wrap">
           <a 
             v-for="social in config.footer.social" 
             :key="social.name"
             :href="social.href" 
             :target="social.target || undefined"
             :rel="social.target === '_blank' ? 'noopener noreferrer' : undefined"
-            class="social-icon w-10 h-10 rounded-full bg-bg-tertiary flex items-center justify-center text-text-secondary no-underline transition-all duration-300 border border-card-border hover:bg-gradient-accent hover:text-white hover:-translate-y-1 hover:shadow-md hover:border-transparent"
+            class="social-icon w-10 h-10 rounded-full bg-transparent flex items-center justify-center text-text-secondary no-underline transition-all duration-300 border-0 hover:-translate-y-1 hover:shadow-md overflow-hidden p-2"
             :aria-label="social.ariaLabel"
           >
-            {{ social.icon }}
+            <img 
+              v-if="social.imageUrl" 
+              :src="social.imageUrl" 
+              :alt="social.name"
+              class="w-full h-full object-contain"
+            />
+            <span v-else>{{ social.icon }}</span>
           </a>
         </div>
       </div>
