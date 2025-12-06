@@ -1,21 +1,24 @@
 <template>
   <section class="hero min-h-screen flex items-center justify-center pt-[calc(80px+6rem)] px-8 pb-24 relative overflow-hidden bg-gradient-hero">
-    <!-- Animated Background Pattern -->
-    <div class="hero-bg-pattern absolute top-0 left-0 w-full h-full opacity-20"></div>
+    <!-- Background Video -->
+    <video 
+      ref="heroVideo"
+      class="hero-video"
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      preload="auto"
+      aria-label="Background gradient video"
+    >
+      <source src="https://video.wixstatic.com/video/f3848c_da20cad6e741454e8f2e240db58d4d40/720p/mp4/file.mp4" type="video/mp4">
+    </video>
     
-    <!-- Subtle Animated Mesh Gradient -->
-    <div class="hero-mesh absolute inset-0 opacity-20"></div>
+    <!-- Subtle Overlay for Text Readability -->
+    <div class="hero-video-overlay absolute inset-0"></div>
     
-    <!-- Floating Gradient Orbs - Subtle -->
-    <div class="hero-orb hero-orb-1 absolute -top-[40%] -right-[15%] w-[700px] h-[700px] rounded-full blur-[60px]"></div>
-    <div class="hero-orb hero-orb-2 absolute -bottom-[25%] -left-[8%] w-[600px] h-[600px] rounded-full blur-[60px]"></div>
-    <div class="hero-orb hero-orb-3 absolute top-[20%] left-[10%] w-[400px] h-[400px] rounded-full blur-[70px]"></div>
-    
-    <!-- Subtle Floating Particles -->
-    <div class="hero-particle hero-particle-1"></div>
-    <div class="hero-particle hero-particle-2"></div>
-    <div class="hero-particle hero-particle-3"></div>
-    <div class="hero-particle hero-particle-4"></div>
+    <!-- Text Focus Glow - Pulsing Aura -->
+    <div class="hero-text-glow absolute inset-0 flex items-center justify-center pointer-events-none z-10"></div>
     
     <div class="hero-content max-w-[1200px] text-center z-20 relative">
       <h1 class="hero-title font-display text-[clamp(3rem,8vw,6.5rem)] font-bold mb-8 text-text-primary leading-[1.15] tracking-[-0.03em] drop-shadow-[0_2px_20px_rgba(0,201,183,0.1)]">
@@ -47,158 +50,43 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 import { config } from '../config.js';
+
+const heroVideo = ref(null);
+
+onMounted(() => {
+  if (heroVideo.value) {
+    heroVideo.value.playbackRate = 0.5; // Half speed playback
+  }
+});
 </script>
 
 <style scoped>
-/* Subtle Animated Mesh Gradient */
-.hero-mesh {
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(0, 201, 183, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(0, 101, 195, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(0, 143, 189, 0.05) 0%, transparent 60%);
-  animation: meshMove 30s ease-in-out infinite;
-  filter: blur(80px);
-}
-
-@keyframes meshMove {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.2;
-  }
-  33% {
-    transform: translate(30px, -30px) scale(1.05);
-    opacity: 0.25;
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.98);
-    opacity: 0.22;
-  }
-}
-
-/* Hero Orb Animations - Subtle */
-.hero-orb-1 {
-  background: radial-gradient(circle, rgba(0, 201, 183, 0.12) 0%, rgba(0, 201, 183, 0.05) 40%, transparent 70%);
-  animation: floatOrb1 35s ease-in-out infinite;
+/* Background Video */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
   opacity: 0.6;
 }
 
-.hero-orb-2 {
-  background: radial-gradient(circle, rgba(0, 101, 195, 0.1) 0%, rgba(0, 101, 195, 0.04) 40%, transparent 70%);
-  animation: floatOrb2 40s ease-in-out infinite;
-  opacity: 0.5;
-}
-
-.hero-orb-3 {
-  background: radial-gradient(circle, rgba(0, 143, 189, 0.08) 0%, rgba(0, 143, 189, 0.03) 40%, transparent 70%);
-  animation: floatOrb3 45s ease-in-out infinite;
-  opacity: 0.4;
-}
-
-@keyframes floatOrb1 {
-  0%, 100% { 
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    opacity: 0.6;
-  }
-  33% { 
-    transform: translate(25px, -25px) scale(1.08) rotate(3deg);
-    opacity: 0.7;
-  }
-  66% { 
-    transform: translate(-15px, 15px) scale(0.96) rotate(-3deg);
-    opacity: 0.55;
-  }
-}
-
-@keyframes floatOrb2 {
-  0%, 100% { 
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    opacity: 0.5;
-  }
-  33% { 
-    transform: translate(-20px, 20px) scale(1.06) rotate(-2deg);
-    opacity: 0.6;
-  }
-  66% { 
-    transform: translate(18px, -18px) scale(0.97) rotate(2deg);
-    opacity: 0.45;
-  }
-}
-
-@keyframes floatOrb3 {
-  0%, 100% { 
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    opacity: 0.4;
-  }
-  50% { 
-    transform: translate(15px, -15px) scale(1.1) rotate(2deg);
-    opacity: 0.5;
-  }
-}
-
-/* Floating Particles - Subtle */
-.hero-particle {
-  position: absolute;
-  border-radius: 50%;
+.hero-video-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(224, 247, 250, 0.3) 0%,
+    rgba(225, 245, 254, 0.25) 50%,
+    rgba(227, 242, 253, 0.3) 100%
+  );
+  z-index: 1;
   pointer-events: none;
-  filter: blur(25px);
 }
 
-.hero-particle-1 {
-  width: 120px;
-  height: 120px;
-  top: 15%;
-  left: 20%;
-  background: radial-gradient(circle, rgba(0, 201, 183, 0.1) 0%, rgba(0, 201, 183, 0.04) 50%, transparent 70%);
-  animation: floatParticle1 28s ease-in-out infinite;
-}
-
-.hero-particle-2 {
-  width: 90px;
-  height: 90px;
-  top: 60%;
-  right: 25%;
-  background: radial-gradient(circle, rgba(0, 101, 195, 0.08) 0%, rgba(0, 101, 195, 0.03) 50%, transparent 70%);
-  animation: floatParticle2 32s ease-in-out infinite;
-}
-
-.hero-particle-3 {
-  width: 100px;
-  height: 100px;
-  bottom: 30%;
-  right: 15%;
-  background: radial-gradient(circle, rgba(0, 143, 189, 0.09) 0%, rgba(0, 143, 189, 0.04) 50%, transparent 70%);
-  animation: floatParticle3 30s ease-in-out infinite;
-}
-
-.hero-particle-4 {
-  width: 80px;
-  height: 80px;
-  top: 40%;
-  left: 15%;
-  background: radial-gradient(circle, rgba(0, 201, 183, 0.08) 0%, rgba(0, 201, 183, 0.03) 50%, transparent 70%);
-  animation: floatParticle4 26s ease-in-out infinite;
-}
-
-@keyframes floatParticle1 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  50% { transform: translate(25px, -25px) scale(1.15); opacity: 0.45; }
-}
-
-@keyframes floatParticle2 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
-  50% { transform: translate(-20px, 20px) scale(1.1); opacity: 0.4; }
-}
-
-@keyframes floatParticle3 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  50% { transform: translate(18px, 18px) scale(1.12); opacity: 0.45; }
-}
-
-@keyframes floatParticle4 {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.28; }
-  50% { transform: translate(-15px, -15px) scale(1.08); opacity: 0.4; }
-}
 
 /* Very Subtle Text Animations - Minimal */
 .hero-title {
@@ -235,7 +123,7 @@ import { config } from '../config.js';
 
 /* Subtle highlight animation */
 .highlight {
-  animation: highlightGlow 8s ease-in-out infinite;
+  animation: highlightGlow 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes highlightGlow {
@@ -243,7 +131,55 @@ import { config } from '../config.js';
     filter: drop-shadow(0 0 8px rgba(0, 201, 183, 0.15));
   }
   50% {
-    filter: drop-shadow(0 0 12px rgba(0, 201, 183, 0.25));
+    filter: drop-shadow(0 0 10px rgba(0, 201, 183, 0.2));
+  }
+}
+
+
+/* Text Focus Glow - Pulsing Aura Around Content */
+.hero-text-glow::before {
+  content: '';
+  position: absolute;
+  width: 1000px;
+  height: 800px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 201, 183, 0.18) 0%,
+    rgba(0, 143, 189, 0.12) 20%,
+    rgba(0, 101, 195, 0.08) 40%,
+    transparent 60%
+  );
+  border-radius: 50%;
+  animation: textGlowPulse 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  filter: blur(60px);
+  will-change: transform;
+}
+
+.hero-text-glow::after {
+  content: '';
+  position: absolute;
+  width: 1200px;
+  height: 900px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 201, 183, 0.15) 0%,
+    rgba(0, 143, 189, 0.1) 30%,
+    rgba(0, 101, 195, 0.06) 45%,
+    transparent 60%
+  );
+  border-radius: 50%;
+  animation: textGlowPulse 18s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 3s;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+@keyframes textGlowPulse {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.08) translateY(-5px);
   }
 }
 </style>

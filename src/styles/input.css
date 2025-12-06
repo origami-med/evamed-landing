@@ -583,10 +583,10 @@
     animation: none;
   }
 
-  /* Continuous subtle glow on gradient buttons */
+  /* Very Subtle glow on gradient buttons */
   .bg-gradient-accent {
     position: relative;
-    animation: subtleGlow 4s ease-in-out infinite;
+    animation: subtleGlow 6s ease-in-out infinite;
   }
 
   /* Override positioning and animation for gradient text */
@@ -614,12 +614,12 @@
 
   @keyframes subtleGlow {
     0%, 100% {
-      filter: drop-shadow(0 0 10px rgba(0, 201, 183, 0.2));
-      box-shadow: 0 0 20px rgba(0, 201, 183, 0.15);
+      filter: drop-shadow(0 0 8px rgba(0, 201, 183, 0.15));
+      box-shadow: 0 0 15px rgba(0, 201, 183, 0.12);
     }
     50% {
-      filter: drop-shadow(0 0 20px rgba(0, 201, 183, 0.3));
-      box-shadow: 0 0 30px rgba(0, 201, 183, 0.25);
+      filter: drop-shadow(0 0 12px rgba(0, 201, 183, 0.2));
+      box-shadow: 0 0 20px rgba(0, 201, 183, 0.18);
     }
   }
 }
