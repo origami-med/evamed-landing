@@ -95,6 +95,23 @@
   100% { transform: translate(50px, 50px); }
 }
 
+@keyframes gridMoveDiagonal {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-50px, -50px) rotate(360deg); }
+}
+
+@keyframes patternRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
 @keyframes shine {
   0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
   100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
@@ -112,6 +129,11 @@
   }
 
   html {
+    scroll-behavior: smooth;
+  }
+
+  /* Smooth scroll with momentum */
+  * {
     scroll-behavior: smooth;
   }
 
@@ -145,7 +167,7 @@
     background: var(--gradient-logo);
   }
 
-  /* Animated Background Pattern */
+  /* Animated Background Pattern - Subtle */
   .bg-pattern {
     position: fixed;
     top: 0;
@@ -166,7 +188,7 @@
         rgba(0, 201, 183, 0.02) 2px,
         rgba(0, 201, 183, 0.02) 4px
       );
-    animation: patternMove 40s ease-in-out infinite;
+    animation: patternMove 50s ease-in-out infinite;
   }
 
   .bg-pattern::before {
@@ -179,7 +201,28 @@
     background: 
       radial-gradient(ellipse at top left, rgba(255, 140, 66, 0.03) 0%, transparent 50%),
       radial-gradient(ellipse at bottom right, rgba(0, 101, 195, 0.03) 0%, transparent 50%);
-    animation: patternOverlay 50s ease-in-out infinite;
+    animation: patternOverlay 60s ease-in-out infinite;
+  }
+
+  .bg-pattern::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      conic-gradient(from 0deg at 30% 30%, 
+        rgba(0, 201, 183, 0.015) 0deg,
+        transparent 60deg,
+        rgba(0, 101, 195, 0.015) 120deg,
+        transparent 180deg,
+        rgba(0, 143, 189, 0.015) 240deg,
+        transparent 300deg,
+        rgba(0, 201, 183, 0.015) 360deg
+      );
+    animation: patternRotate 80s linear infinite;
+    opacity: 0.3;
   }
 
   /* Custom scrollbar */
@@ -264,14 +307,14 @@
     transform: translateY(-2px) scale(0.98);
   }
 
-  /* Hero Section Grid Pattern */
+  /* Hero Section Grid Pattern - Subtle Animation */
   .hero .hero-bg-pattern {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+    opacity: 0.25;
     background-image: 
       repeating-linear-gradient(
         0deg,
@@ -287,7 +330,102 @@
         rgba(0, 101, 195, 0.03) 2px,
         rgba(0, 101, 195, 0.03) 4px
       );
-    animation: gridMove 20s linear infinite;
+    animation: gridMove 35s linear infinite;
+    z-index: 0;
+  }
+
+  .hero .hero-bg-pattern::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 4px,
+        rgba(0, 201, 183, 0.02) 4px,
+        rgba(0, 201, 183, 0.02) 8px
+      );
+    animation: gridMoveDiagonal 40s linear infinite reverse;
+    opacity: 0.4;
+  }
+
+  /* Subtle Background Gradient Animation */
+  .hero {
+    background: var(--gradient-hero);
+    background-size: 200% 200%;
+    animation: gradientShift 25s ease infinite;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at 30% 20%, rgba(0, 201, 183, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(0, 101, 195, 0.06) 0%, transparent 50%);
+    animation: backgroundPulse 18s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      conic-gradient(from 0deg at 50% 50%, 
+        rgba(0, 201, 183, 0.02) 0deg,
+        transparent 60deg,
+        rgba(0, 101, 195, 0.02) 120deg,
+        transparent 180deg,
+        rgba(0, 143, 189, 0.02) 240deg,
+        transparent 300deg,
+        rgba(0, 201, 183, 0.02) 360deg
+      );
+    animation: conicRotate 40s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes backgroundPulse {
+    0%, 100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes conicRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   /* Feature Card Styles */
@@ -295,6 +433,15 @@
     box-shadow: 
       0 20px 40px -10px rgba(0, 0, 0, 0.05), 
       inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+      0 25px 50px -10px rgba(0, 0, 0, 0.08), 
+      inset 0 0 0 1px rgba(255, 255, 255, 0.6),
+      0 0 40px rgba(0, 201, 183, 0.1);
   }
 
   /* Video Container Grid Positioning */
@@ -307,23 +454,38 @@
   .addon-card {
     background-image: 
       linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(250, 250, 250, 0.9));
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .addon-card:hover {
     background-image: 
       linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(250, 250, 250, 0.98));
+    transform: translateY(-8px) scale(1.01);
   }
 
   /* Testimonial Card Background Gradient */
   .testimonial-card {
     background-image: 
       linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(250, 250, 250, 0.95));
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-6px) scale(1.01);
   }
 
   /* Contact Form Background Gradient */
   .contact-form {
     background-image: 
       linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(250, 250, 250, 0.98));
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contact-form:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+      0 15px 35px -5px rgba(0, 0, 0, 0.1),
+      0 0 30px rgba(0, 201, 183, 0.08);
   }
 
   /* Mobile Menu Hover */
@@ -389,6 +551,76 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    transition: all 0.3s ease;
+  }
+
+  .logo-text:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 2px 8px rgba(0, 201, 183, 0.3));
+  }
+
+  /* Very Subtle breathing animation for cards */
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1) translateY(0);
+    }
+    50% {
+      transform: scale(1.001) translateY(-0.5px);
+    }
+  }
+
+  .pricing-card,
+  .addon-card,
+  .testimonial-card,
+  .feature-card {
+    animation: breathe 12s ease-in-out infinite;
+  }
+
+  .pricing-card:hover,
+  .addon-card:hover,
+  .testimonial-card:hover,
+  .feature-card:hover {
+    animation: none;
+  }
+
+  /* Continuous subtle glow on gradient buttons */
+  .bg-gradient-accent {
+    position: relative;
+    animation: subtleGlow 4s ease-in-out infinite;
+  }
+
+  /* Override positioning and animation for gradient text */
+  .bg-gradient-accent.bg-clip-text {
+    position: static !important;
+    animation: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    display: inline !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  
+  /* Dedicated gradient text utility */
+  .gradient-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline;
+  }
+
+  @keyframes subtleGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 10px rgba(0, 201, 183, 0.2));
+      box-shadow: 0 0 20px rgba(0, 201, 183, 0.15);
+    }
+    50% {
+      filter: drop-shadow(0 0 20px rgba(0, 201, 183, 0.3));
+      box-shadow: 0 0 30px rgba(0, 201, 183, 0.25);
+    }
   }
 }
 
@@ -447,4 +679,46 @@
   .testimonial-card:nth-child(1) { transition-delay: 0.1s; }
   .testimonial-card:nth-child(2) { transition-delay: 0.2s; }
   .testimonial-card:nth-child(3) { transition-delay: 0.3s; }
+
+  /* Continuous subtle section animations */
+  section {
+    position: relative;
+  }
+
+  section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 201, 183, 0.03) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  section:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Very Subtle logo animation */
+.logo-container {
+  animation: logoFloat 10s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-1px) rotate(0.5deg);
+  }
 }
