@@ -10,39 +10,49 @@
   <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png" type="image/png">
   <link rel="shortcut icon" href="https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png" type="image/png">
   
-  <!-- Google Fonts - Distinctive Typography for Indian Market -->
+  <!-- Google Fonts - Distinctive Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Color Palette - Medical Professional Theme with Logo Colors */
-      --logo-gradient-start: #4ecdc4;
-      --logo-gradient-end: #3b82f6;
-      --primary: #06b6d4;
-      --primary-dark: #0891b2;
-      --primary-light: #22d3ee;
-      --accent: #f97316;
-      --accent-secondary: #fb923c;
-      --success: #10b981;
-      --bg-primary: #ffffff;
-      --bg-secondary: #f8fafc;
-      --bg-tertiary: #f1f5f9;
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
-      --text-muted: #64748b;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --gradient-hero: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 25%, #7dd3fc 50%, #38bdf8 75%, #0ea5e9 100%);
-      --gradient-accent: linear-gradient(135deg, #4ecdc4 0%, #22d3ee 50%, #3b82f6 100%);
-      --gradient-subtle: linear-gradient(135deg, rgba(78, 205, 196, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
-      --logo-gradient: linear-gradient(180deg, #4ecdc4 0%, #3b82f6 100%);
+      /* Color Palette - Aligned with Logo (Teal to Blue) */
+      --logo-teal: #00C9B7;
+      --logo-blue: #0065C3;
+      
+      --primary: #008FBD; /* Midpoint of gradient for text/borders */
+      --primary-dark: #005A8C;
+      --primary-light: #33D4C5;
+      
+      --accent: #FF8C42; /* Complementary orange for CTAs */
+      --accent-secondary: #FFA666;
+      --accent-warm: #FF6B6B;
+      
+      --success: #00C9B7;
+      
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F0F7FA; /* Very light blue tint */
+      --bg-tertiary: #E1EFF5;
+      
+      --text-primary: #0F172A;
+      --text-secondary: #334155;
+      --text-muted: #64748B;
+      
+      --card-bg: #FFFFFF;
+      --card-border: #E2E8F0;
+      
+      --gradient-hero: linear-gradient(135deg, #E0F7FA 0%, #E1F5FE 50%, #E3F2FD 100%);
+      --gradient-accent: linear-gradient(135deg, #00C9B7 0%, #0095C8 50%, #0065C3 100%);
+      --gradient-warm: linear-gradient(135deg, #FF8C42 0%, #FF6B6B 100%);
+      --logo-gradient: linear-gradient(180deg, #00C9B7 0%, #0065C3 100%);
+      
+      --shadow-glow: 0 0 30px rgba(0, 201, 183, 0.2);
+      --shadow-glow-strong: 0 0 50px rgba(0, 101, 195, 0.25);
       
       /* Typography */
-      --font-display: 'Outfit', sans-serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-      --font-accent: 'Space Grotesk', sans-serif;
+      --font-display: 'Manrope', sans-serif;
+      --font-body: 'Mulish', sans-serif;
       
       /* Spacing */
       --spacing-xs: 0.5rem;
@@ -57,8 +67,8 @@
       --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
       --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
       --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
-      --glow: 0 0 30px rgba(78, 205, 196, 0.3);
-      --glow-blue: 0 0 30px rgba(59, 130, 246, 0.25);
+      --glow: var(--shadow-glow);
+      --glow-blue: var(--shadow-glow);
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
@@ -79,10 +89,11 @@
       font-family: var(--font-body);
       background: var(--bg-primary);
       color: var(--text-primary);
-      line-height: 1.7;
+      line-height: 1.75;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "kern" 1, "liga" 1;
     }
     
     /* Animated Background Pattern */
@@ -94,17 +105,43 @@
       height: 100%;
       z-index: -1;
       background: var(--bg-primary);
-      opacity: 0.4;
+      opacity: 1;
       background-image: 
-        radial-gradient(circle at 20% 30%, rgba(78, 205, 196, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.04) 0%, transparent 50%);
-      animation: patternMove 30s ease-in-out infinite;
+        radial-gradient(circle at 15% 25%, rgba(0, 201, 183, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(0, 101, 195, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(0, 143, 189, 0.03) 0%, transparent 50%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 201, 183, 0.02) 2px,
+          rgba(0, 201, 183, 0.02) 4px
+        );
+      animation: patternMove 40s ease-in-out infinite;
+    }
+    
+    .bg-pattern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(ellipse at top left, rgba(255, 140, 66, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(0, 101, 195, 0.03) 0%, transparent 50%);
+      animation: patternOverlay 50s ease-in-out infinite;
     }
     
     @keyframes patternMove {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-20px, -20px) scale(1.05); }
+      0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+      33% { transform: translate(-30px, -30px) scale(1.08) rotate(2deg); }
+      66% { transform: translate(30px, 30px) scale(0.95) rotate(-2deg); }
+    }
+    
+    @keyframes patternOverlay {
+      0%, 100% { opacity: 1; transform: translate(0, 0); }
+      50% { opacity: 0.7; transform: translate(20px, -20px); }
     }
     
     /* Header */
@@ -115,16 +152,18 @@
       right: 0;
       z-index: 1000;
       padding: var(--spacing-sm) var(--spacing-md);
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--shadow-sm);
+      background: rgba(250, 250, 250, 0.85);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(229, 229, 229, 0.6);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
     
     header.scrolled {
-      box-shadow: var(--shadow-md);
-      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 201, 183, 0.05);
+      background: rgba(250, 250, 250, 0.95);
+      padding: calc(var(--spacing-xs) + 2px) var(--spacing-md);
     }
     
     nav {
@@ -160,14 +199,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: var(--shadow-md), var(--glow);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-md), var(--shadow-glow);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
     }
     
+    .logo-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: rotate(45deg);
+      animation: shine 3s infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
     .logo:hover .logo-container {
-      transform: rotate(5deg) scale(1.05);
-      box-shadow: var(--shadow-lg), 0 0 40px rgba(78, 205, 196, 0.4);
+      transform: rotate(3deg) scale(1.08);
+      box-shadow: var(--shadow-lg), var(--shadow-glow-strong);
     }
     
     .logo img {
@@ -222,20 +278,20 @@
       width: 100%;
     }
     
-    .nav-cta {
+    .nav-links .nav-cta {
       padding: 0.625rem 1.5rem;
       background: var(--gradient-accent);
-      color: white;
+      color: white !important;
       border-radius: 50px;
       font-weight: 600;
       box-shadow: var(--shadow-sm);
       transition: all 0.3s ease;
     }
     
-    .nav-cta:hover {
+    .nav-links .nav-cta:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md), var(--glow);
-      color: white;
+      color: white !important;
     }
     
     .nav-cta::after {
@@ -316,30 +372,63 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%);
+      top: -40%;
+      right: -15%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(0, 201, 183, 0.12) 0%, transparent 65%);
       border-radius: 50%;
-      animation: float 20s ease-in-out infinite;
+      animation: float 25s ease-in-out infinite;
+      filter: blur(40px);
     }
     
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+      bottom: -25%;
+      left: -8%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 101, 195, 0.1) 0%, transparent 65%);
       border-radius: 50%;
-      animation: float 25s ease-in-out infinite reverse;
+      animation: float 30s ease-in-out infinite reverse;
+      filter: blur(40px);
+    }
+    
+    .hero .bg-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      background-image: 
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 201, 183, 0.03) 2px,
+          rgba(0, 201, 183, 0.03) 4px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 101, 195, 0.03) 2px,
+          rgba(0, 101, 195, 0.03) 4px
+        );
+      animation: gridMove 20s linear infinite;
     }
     
     @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(30px, -30px) scale(1.1); }
+      0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+      33% { transform: translate(40px, -40px) scale(1.15) rotate(5deg); }
+      66% { transform: translate(-20px, 20px) scale(0.9) rotate(-5deg); }
+    }
+    
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
     }
     
     .hero-content {
@@ -351,13 +440,14 @@
     
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.5rem, 7vw, 5.5rem);
-      font-weight: 800;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 700;
       margin-bottom: var(--spacing-md);
       color: var(--text-primary);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      animation: fadeInUp 0.8s ease-out;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      animation: fadeInUp 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+      text-shadow: 0 2px 20px rgba(0, 201, 183, 0.1);
     }
     
     .hero h1 .highlight {
@@ -366,6 +456,26 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       display: block;
+      position: relative;
+      animation: fadeInUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+    }
+    
+    .hero h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 0.1em;
+      left: 0;
+      right: 0;
+      height: 0.15em;
+      background: var(--gradient-warm);
+      opacity: 0.3;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: underlineExpand 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+    }
+    
+    @keyframes underlineExpand {
+      to { transform: scaleX(1); }
     }
     
     .hero p {
@@ -388,23 +498,26 @@
     
     .cta-button {
       display: inline-block;
-      padding: 1rem 2.5rem;
+      padding: 1.125rem 2.75rem;
       background: var(--gradient-accent);
       color: white;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
+      font-family: var(--font-body);
       border-radius: 50px;
-      box-shadow: var(--shadow-md), var(--glow);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-md), var(--shadow-glow);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+      border: 2px solid transparent;
     }
     
     .cta-button.secondary {
       background: white;
       color: var(--primary);
       box-shadow: var(--shadow-md);
+      border-color: rgba(0, 201, 183, 0.2);
     }
     
     .cta-button::before {
@@ -415,24 +528,46 @@
       width: 0;
       height: 0;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.25);
       transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
+      transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1), height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50px;
+      padding: 2px;
+      background: var(--gradient-accent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.4s ease;
     }
     
     .cta-button:hover::before {
-      width: 300px;
-      height: 300px;
+      width: 350px;
+      height: 350px;
     }
     
     .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg), var(--glow), var(--glow-blue);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: var(--shadow-lg), var(--shadow-glow-strong);
+      border-color: rgba(255, 255, 255, 0.3);
     }
     
     .cta-button.secondary:hover {
       background: var(--bg-secondary);
       box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+    
+    .cta-button:active {
+      transform: translateY(-2px) scale(0.98);
     }
     
     @keyframes fadeInUp {
@@ -455,11 +590,28 @@
     .section-title {
       text-align: center;
       font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
+      font-size: clamp(2.25rem, 5.5vw, 4rem);
+      font-weight: 700;
       margin-bottom: var(--spacing-md);
       color: var(--text-primary);
       line-height: 1.2;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+      opacity: 0.6;
     }
     
     .section-subtitle {
@@ -482,98 +634,171 @@
     }
     
     .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: var(--spacing-lg);
-      margin-top: var(--spacing-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-2xl);
+      margin-top: var(--spacing-xl);
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      counter-reset: feature-counter; /* Initialize counter */
     }
     
     .feature-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
-      padding: var(--spacing-lg);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-xl);
+      transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
       position: relative;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
+      overflow: visible;
+      box-shadow: 
+        0 20px 40px -10px rgba(0, 0, 0, 0.05), 
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+      z-index: 1;
+      counter-increment: feature-counter; /* Increment counter */
     }
-    
-    .feature-card::before {
-      content: '';
+
+    /* Large Watermark Number */
+    .feature-card::after {
+      content: "0" counter(feature-counter);
       position: absolute;
-      top: 0;
+      top: -2rem;
       left: 0;
-      width: 100%;
-      height: 4px;
+      font-family: var(--font-display);
+      font-size: 12rem;
+      font-weight: 800;
+      color: var(--primary);
+      opacity: 0.03;
+      z-index: -1;
+      line-height: 1;
+      pointer-events: none;
+      transition: all 0.6s ease;
+    }
+
+    .feature-card:nth-child(even)::after {
+      left: auto;
+      right: 0;
+    }
+
+    .feature-card:hover::after {
+      opacity: 0.08;
+      transform: translateY(-10px);
       background: var(--gradient-accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .feature-card-content {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+      position: relative;
+      z-index: 2;
     }
     
-    .feature-card:hover::before {
-      transform: scaleX(1);
+    /* Alternating Layout */
+    .feature-card:nth-child(even) .feature-card-content {
+      grid-template-columns: 1.1fr 1fr;
+      direction: rtl;
     }
     
-    .feature-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--primary-light);
-      box-shadow: var(--shadow-lg), var(--glow);
+    .feature-card:nth-child(even) .feature-card-content > * {
+      direction: ltr;
     }
-    
+
+    /* Feature Tag */
+    .feature-tag {
+      display: inline-block;
+      font-family: var(--font-accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      background: rgba(0, 201, 183, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      margin-bottom: var(--spacing-sm);
+      border: 1px solid rgba(0, 201, 183, 0.2);
+      grid-column: 1;
+      width: fit-content;
+    }
+
     .feature-card h2 {
       font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 1.75rem);
-      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 800;
       margin-bottom: var(--spacing-md);
       color: var(--text-primary);
+      line-height: 1.2;
+      grid-column: 1;
     }
     
     .feature-card ul {
       list-style: none;
-      margin-top: var(--spacing-md);
+      margin-top: var(--spacing-sm);
+      grid-column: 1;
     }
     
     .feature-card li {
       padding: var(--spacing-sm) 0;
-      padding-left: var(--spacing-md);
+      padding-left: 3rem;
       position: relative;
       color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-    
-    .feature-card li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
+      line-height: 1.6;
       transition: transform 0.3s ease;
     }
     
-    .feature-card:hover li::before {
-      transform: scale(1.2) rotate(5deg);
+    /* Custom Checkmark Icon */
+    .feature-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1.1rem;
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300C9B7' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover li {
+      transform: translateX(8px);
     }
     
     .video-container {
-      margin-top: var(--spacing-md);
+      grid-column: 2;
+      grid-row: 1 / span 3; /* Span height of tag + title + content */
       border-radius: var(--radius-md);
       overflow: hidden;
       position: relative;
       aspect-ratio: 16 / 9;
-      background: var(--bg-tertiary);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow-md);
-      transition: all 0.3s ease;
+      background: #000;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+      transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform: perspective(1000px) rotateY(-5deg) translateX(10px);
+      border: 4px solid rgba(255, 255, 255, 0.5);
+      width: 100%;
     }
     
-    .video-container:hover {
-      border-color: var(--primary-light);
-      box-shadow: var(--shadow-lg), 0 0 20px rgba(78, 205, 196, 0.2);
-      transform: scale(1.02);
+    /* Reverse rotation for even cards */
+    .feature-card:nth-child(even) .video-container {
+      transform: perspective(1000px) rotateY(5deg) translateX(-10px);
+    }
+    
+    /* Video Hover Effect */
+    .feature-card:hover .video-container {
+      transform: perspective(1000px) rotateY(0deg) translateX(0) scale(1.02);
+      box-shadow: 
+        0 30px 60px -15px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(0, 201, 183, 0.3);
+      border-color: #fff;
     }
     
     .video-container iframe {
@@ -581,6 +806,7 @@
       height: 100%;
       border: none;
       display: block;
+      background: #fff;
     }
     
     /* Pricing Section */
@@ -599,55 +825,133 @@
     }
     
     .pricing-card {
-      background: var(--card-bg);
-      border: 2px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
       border-radius: var(--radius-lg);
-      padding: var(--spacing-lg);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: var(--spacing-md);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
-    }
-    
-    .pricing-card.featured {
-      border-color: var(--primary);
-      box-shadow: var(--shadow-md), var(--glow);
-      transform: scale(1.05);
+      overflow: hidden;
     }
     
     .pricing-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--primary);
-      box-shadow: var(--shadow-lg), var(--glow);
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 
+        0 20px 40px -10px rgba(0, 0, 0, 0.1),
+        0 0 30px rgba(0, 201, 183, 0.15);
+      border-color: rgba(0, 201, 183, 0.3);
+    }
+    
+    .pricing-card.featured {
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid var(--primary);
+      transform: scale(1.05);
+      box-shadow: 
+        0 20px 50px -10px rgba(0, 0, 0, 0.15),
+        0 0 40px rgba(0, 201, 183, 0.2);
+      z-index: 2;
     }
     
     .pricing-card.featured:hover {
-      transform: scale(1.05) translateY(-8px);
+      transform: scale(1.05) translateY(-10px);
     }
     
+    /* Popular Badge */
+    .popular-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--gradient-accent);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.5rem 1.5rem;
+      border-bottom-left-radius: var(--radius-md);
+      box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.1);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .pricing-header {
+      text-align: center;
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-md);
+      border-bottom: 1px solid var(--card-border);
+    }
+
     .pricing-card h3 {
       font-family: var(--font-display);
       font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: var(--spacing-sm);
+      font-weight: 800;
+      margin-bottom: var(--spacing-xs);
       color: var(--text-primary);
     }
     
     .pricing-price {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 800;
       color: var(--primary);
-      margin: var(--spacing-md) 0;
-      font-family: var(--font-display);
+      line-height: 1;
+      margin: var(--spacing-xs) 0;
+      font-family: var(--font-body);
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      text-align: center;
+      gap: 4px;
     }
     
-    .pricing-price .period {
+    .pricing-period {
       font-size: 1rem;
+      color: var(--text-muted);
       font-weight: 500;
-      color: var(--text-secondary);
     }
     
+    .pricing-details {
+      margin: var(--spacing-md) 0;
+      background: rgba(0, 201, 183, 0.08);
+      border: 1px solid rgba(0, 201, 183, 0.15);
+      border-radius: var(--radius-sm);
+      padding: var(--spacing-md);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    .pricing-label {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .pricing-value {
+      color: var(--text-primary);
+      font-weight: 800;
+      font-size: 1rem;
+      text-align: right;
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-items: baseline;
+      justify-content: flex-end;
+      white-space: nowrap;
+    }
+    
+    .pricing-divider {
+      grid-column: 1 / -1;
+      height: 1px;
+      background: rgba(0, 201, 183, 0.15);
+      margin: 0.25rem 0;
+    }
+
     .pricing-features {
       list-style: none;
       margin: var(--spacing-md) 0;
@@ -656,36 +960,58 @@
     
     .pricing-features li {
       padding: var(--spacing-xs) 0;
-      padding-left: var(--spacing-md);
-      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
       color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0.25rem;
     }
     
     .pricing-features li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--success);
-      font-weight: bold;
+      content: '';
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 0.2em;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300C9B7' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
     }
     
     .pricing-card .cta-button {
       width: 100%;
       text-align: center;
-      margin-top: var(--spacing-md);
+      margin-top: auto;
     }
     
     .pricing-note {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       margin-top: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
       text-align: center;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    
+    .pricing-tax-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: -0.5rem;
+      margin-bottom: var(--spacing-md);
+      text-align: center;
+      opacity: 0.8;
     }
     
     .pricing-strikethrough {
       text-decoration: line-through;
       color: var(--text-muted);
-      margin-right: var(--spacing-xs);
+      margin-right: 0.25rem;
+      font-size: 0.85em;
+      font-weight: 500;
+      opacity: 0.8;
     }
     
     /* Add-ons Section */
@@ -705,17 +1031,41 @@
     
     .addon-card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      border: 1.5px solid var(--card-border);
       border-radius: var(--radius-lg);
       padding: var(--spacing-lg);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: var(--shadow-sm);
+      background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(250, 250, 250, 0.9));
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .addon-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .addon-card:hover::before {
+      transform: scaleX(1);
     }
     
     .addon-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-12px) scale(1.02);
       border-color: var(--primary);
-      box-shadow: var(--shadow-lg), var(--glow);
+      box-shadow: var(--shadow-xl), var(--shadow-glow);
+      background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(250, 250, 250, 0.98));
     }
     
     .addon-card h3 {
@@ -753,16 +1103,32 @@
     
     .testimonial-card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      border: 1.5px solid var(--card-border);
       border-radius: var(--radius-lg);
       padding: var(--spacing-lg);
       box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(250, 250, 250, 0.95));
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 4rem;
+      font-family: var(--font-display);
+      color: var(--primary);
+      opacity: 0.15;
+      line-height: 1;
     }
     
     .testimonial-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      border-color: var(--primary);
     }
     
     .testimonial-text {
@@ -781,6 +1147,7 @@
     /* Contact Section */
     .contact {
       background: var(--bg-primary);
+      padding: var(--spacing-2xl) var(--spacing-md);
     }
     
     .contact-container {
@@ -790,10 +1157,31 @@
     
     .contact-form {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      border: 2px solid var(--card-border);
       border-radius: var(--radius-lg);
-      padding: var(--spacing-lg);
+      padding: var(--spacing-xl);
       box-shadow: var(--shadow-md);
+      background-image: 
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(250, 250, 250, 0.98));
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .contact-form:hover::before {
+      transform: scaleX(1);
     }
     
     .form-group {
@@ -811,21 +1199,29 @@
     .form-group input,
     .form-group textarea {
       width: 100%;
-      padding: 0.875rem 1rem;
+      padding: 1rem 1.25rem;
       border: 2px solid var(--card-border);
       border-radius: var(--radius-sm);
       font-family: var(--font-body);
       font-size: 1rem;
       color: var(--text-primary);
       background: var(--bg-primary);
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
     }
     
     .form-group input:focus,
     .form-group textarea:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+      box-shadow: 0 0 0 4px rgba(0, 201, 183, 0.12), var(--shadow-sm);
+      transform: translateY(-1px);
+      background: white;
+    }
+    
+    .form-group input:hover,
+    .form-group textarea:hover {
+      border-color: rgba(0, 201, 183, 0.3);
     }
     
     .form-group textarea {
@@ -975,24 +1371,61 @@
     .modal-content {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: var(--spacing-lg);
+      width: 100%;
       max-width: 800px;
-      max-height: 90vh;
-      overflow-y: auto;
+      max-height: 85vh; /* Slightly reduced to fit well */
       box-shadow: var(--shadow-xl);
       position: relative;
       transform: scale(0.9);
       transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden; /* Prevent double scrollbars */
+      padding: 0; /* Padding moved to children */
+    }
+    
+    .modal-header {
+      padding: var(--spacing-lg);
+      padding-bottom: var(--spacing-sm);
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      z-index: 10;
+    }
+
+    .modal-body {
+      padding: var(--spacing-lg);
+      padding-top: 0; /* Spacing handled by header */
+      overflow-y: auto;
+      flex-grow: 1;
     }
     
     .modal.active .modal-content {
       transform: scale(1);
     }
+
+    /* Modal Scrollbar - Applied to modal-body */
+    .modal-body::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .modal-body::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .modal-body::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 201, 183, 0.2); /* Light Teal */
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+    
+    .modal-body::-webkit-scrollbar-thumb:hover {
+      background-color: var(--primary);
+    }
     
     .modal-close {
-      position: absolute;
-      top: var(--spacing-md);
-      right: var(--spacing-md);
       background: none;
       border: none;
       font-size: 1.5rem;
@@ -1035,6 +1468,22 @@
       
       header {
         padding: var(--spacing-xs) var(--spacing-sm);
+      }
+      
+      .feature-card-content {
+        grid-template-columns: 1fr !important; /* Force stack */
+        gap: var(--spacing-md);
+      }
+      
+      .video-container {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        transform: none !important; /* Disable 3D effect on mobile */
+        margin-top: var(--spacing-md);
+      }
+      
+      .feature-card li {
+        padding-left: 2rem;
       }
       
       .nav-links {
@@ -1092,6 +1541,10 @@
         gap: var(--spacing-md);
       }
       
+      .pricing-price {
+        font-size: 2.5rem;
+      }
+      
       .pricing-card.featured {
         transform: scale(1);
       }
@@ -1137,35 +1590,54 @@
       .addon-card,
       .testimonial-card {
         opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+        transform: translateY(40px) scale(0.95);
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       }
+      
+      .feature-card:nth-child(1) { transition-delay: 0.1s; }
+      .feature-card:nth-child(2) { transition-delay: 0.2s; }
+      .feature-card:nth-child(3) { transition-delay: 0.3s; }
+      .feature-card:nth-child(4) { transition-delay: 0.4s; }
+      
+      .pricing-card:nth-child(1) { transition-delay: 0.1s; }
+      .pricing-card:nth-child(2) { transition-delay: 0.2s; }
+      .pricing-card:nth-child(3) { transition-delay: 0.3s; }
+      
+      .addon-card:nth-child(1) { transition-delay: 0.1s; }
+      .addon-card:nth-child(2) { transition-delay: 0.2s; }
+      
+      .testimonial-card:nth-child(1) { transition-delay: 0.1s; }
+      .testimonial-card:nth-child(2) { transition-delay: 0.2s; }
+      .testimonial-card:nth-child(3) { transition-delay: 0.3s; }
       
       .feature-card.visible,
       .pricing-card.visible,
       .addon-card.visible,
       .testimonial-card.visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
     
     /* Smooth Scrollbar */
     ::-webkit-scrollbar {
-      width: 10px;
+      width: 12px;
     }
     
     ::-webkit-scrollbar-track {
       background: var(--bg-secondary);
+      border-left: 1px solid var(--card-border);
     }
     
     ::-webkit-scrollbar-thumb {
       background: var(--gradient-accent);
-      border-radius: 5px;
+      border-radius: 6px;
+      border: 2px solid var(--bg-secondary);
     }
     
     ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(180deg, #22d3ee 0%, #3b82f6 100%);
+      background: linear-gradient(180deg, #14b8a6 0%, #059669 100%);
+      box-shadow: inset 0 0 10px rgba(0, 201, 183, 0.3);
     }
   </style>
 </head>
@@ -1183,7 +1655,6 @@
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
         <li><a href="#contact" class="nav-cta">Contact Us</a></li>
       </ul>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
@@ -1221,63 +1692,67 @@
         <!-- Feature 1 -->
         <div class="feature-card">
           <div class="feature-card-content">
-              <h2>Complete prescriptions and procedures within 30 seconds</h2>
+            <span class="feature-tag">Smart Prescriptions</span>
+            <h2>Complete prescriptions and procedures within 30 seconds</h2>
             <ul>
               <li>Instantly access 3L+ medicines and generic names kept up to date</li>
-                <li>Quickly Dictate prescriptions with the Power of AI</li>
+              <li>Quickly Dictate prescriptions with the Power of AI</li>
               <li>Send prescriptions in local languages instantly with WhatsApp</li>
-                <li>Quickly complete consultation and capture photos from your phone</li>
-              </ul>
-              <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/YznmKYLcJJ8" title="evamed Feature Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
+              <li>Quickly complete consultation and capture photos from your phone</li>
+            </ul>
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/YznmKYLcJJ8" title="evamed Feature Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
-          
-          <!-- Feature 2 -->
-          <div class="feature-card">
-            <div class="feature-card-content">
-              <h2>Improve conversion and keep track of procedures</h2>
-              <ul>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-card-content">
+            <span class="feature-tag">Patient Growth</span>
+            <h2>Improve conversion and keep track of procedures</h2>
+            <ul>
               <li>Create and share Treatment Plans and estimates</li>
               <li>Capture and compare before and after images</li>
               <li>Create Packages for easy reuse</li>
             </ul>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/xP5naBDGTxA" title="evamed Feature Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/xP5naBDGTxA" title="evamed Feature Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
         
-          <!-- Feature 3 -->
+        <!-- Feature 3 -->
         <div class="feature-card">
           <div class="feature-card-content">
+            <span class="feature-tag">Practice Management</span>
             <h2>Handle Billing, Follow-Ups, and Insights with Ease</h2>
             <ul>
-                <li>Send GST-compliant bills to patients instantly without errors</li>
-                <li>Never miss a follow-up with WhatsApp reminders</li>
-                <li>Quickly see trends and research your patient data to make informed decisions</li>
+              <li>Send GST-compliant bills to patients instantly without errors</li>
+              <li>Never miss a follow-up with WhatsApp reminders</li>
+              <li>Quickly see trends and research your patient data to make informed decisions</li>
             </ul>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/pbx590JT2qw" title="evamed Feature Video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/pbx590JT2qw" title="evamed Feature Video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
         
-          <!-- Feature 4 -->
+        <!-- Feature 4 -->
         <div class="feature-card">
           <div class="feature-card-content">
-              <h2>Complete Control over Your Patient Data</h2>
-              <ul>
-                <li>Keep full control with patient data stored locally on computer</li>
-                <li>Access patient data from anywhere using your Google Drive</li>
-                <li>Work seamlessly with your Laptop, mobile, Tab with instant sync</li>
+            <span class="feature-tag">Data Security</span>
+            <h2>Complete Control over Your Patient Data</h2>
+            <ul>
+              <li>Keep full control with patient data stored locally on computer</li>
+              <li>Access patient data from anywhere using your Google Drive</li>
+              <li>Work seamlessly with your Laptop, mobile, Tab with instant sync</li>
             </ul>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/M81fHd1Jhg8" title="evamed Feature Video 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
+              <iframe src="https://www.youtube.com/embed/M81fHd1Jhg8" title="evamed Feature Video 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -1290,49 +1765,81 @@
         <div class="pricing-grid">
           <!-- Forever Free Plan -->
           <div class="pricing-card">
-            <h3>Forever Free</h3>
-            <div class="pricing-price">No Charges</div>
+            <div class="pricing-header">
+              <h3>Forever Free</h3>
+              <div class="pricing-price">Free</div>
+              <div class="pricing-period">Trial at your own pace</div>
+            </div>
+            
             <ul class="pricing-features">
-              <li>Trial at your own pace</li>
               <li>All features in Premium Plan</li>
               <li>Access to all future updates</li>
               <li>Add upto 10 patients a month</li>
             </ul>
-            <a href="#contact" class="cta-button">Contact Us</a>
+            <a href="#contact" class="cta-button secondary">Contact Us</a>
           </div>
           
           <!-- Premium Plan -->
           <div class="pricing-card featured">
-            <h3>Premium</h3>
-            <div class="pricing-price">
-              <span class="pricing-strikethrough">₹2000</span> ₹1700<span class="period">/month*</span>
+            <div class="popular-badge">Best Value</div>
+            <div class="pricing-header">
+              <h3>Premium</h3>
+              <div class="pricing-price">₹1700<span class="pricing-period">/mo*</span></div>
+              <div class="pricing-period">Billed Annually</div>
             </div>
-            <p class="pricing-note" style="margin-bottom: var(--spacing-sm);">Billed Annually</p>
+            
+            <div class="pricing-details">
+              <div class="pricing-label">Single Doctor</div>
+              <div class="pricing-value">
+                <span class="pricing-strikethrough">₹2000</span> ₹1700
+              </div>
+              <div class="pricing-divider"></div>
+              <div class="pricing-label">Two Doctors</div>
+              <div class="pricing-value">
+                <span class="pricing-strikethrough">+₹1000</span> +₹500
+              </div>
+            </div>
+            
             <ul class="pricing-features">
               <li>Single Clinic</li>
-              <li>All EMR Features - Consultations, Procedures, Dictation, Billing ++ more</li>
-              <li>Multiple device access across computer, tablet, mobile</li>
-              <li>Two Doctors: <span class="pricing-strikethrough">+ ₹1000</span> + ₹500/month*</li>
+              <li>All EMR Features (Consultations, Billing, etc.)</li>
+              <li>Multiple device access</li>
             </ul>
-            <p class="pricing-note">For more than two Doctors, Talk to us for custom pricing</p>
+            
+            <div class="pricing-note">For >2 Doctors, contact for custom pricing</div>
+            <div class="pricing-tax-note">* Price excluding taxes</div>
             <a href="#contact" class="cta-button">Contact Us</a>
           </div>
           
           <!-- Premium Plus Plan -->
           <div class="pricing-card">
-            <h3>Premium Plus</h3>
-            <div class="pricing-price">
-              <span class="pricing-strikethrough">₹2500</span> ₹1700<span class="period">/month*</span>
+            <div class="pricing-header">
+              <h3>Premium Plus</h3>
+              <div class="pricing-price">₹1700<span class="pricing-period">/mo*</span></div>
+              <div class="pricing-period">Billed Annually</div>
             </div>
-            <p class="pricing-note" style="margin-bottom: var(--spacing-sm);">Billed Annually</p>
+            
+            <div class="pricing-details">
+              <div class="pricing-label">Single Doctor</div>
+              <div class="pricing-value">
+                <span class="pricing-strikethrough">₹2500</span> ₹1700
+              </div>
+              <div class="pricing-divider"></div>
+              <div class="pricing-label">Two Doctors</div>
+              <div class="pricing-value">
+                <span class="pricing-strikethrough">+₹1500</span> +₹1000
+              </div>
+            </div>
+            
             <ul class="pricing-features">
               <li>Multiple Clinics</li>
-              <li>All EMR Features - Consultations, Procedures, Dictation, Billing ++ more</li>
-              <li>Multiple device access across computer, tablet, mobile</li>
-              <li>Two Doctors: <span class="pricing-strikethrough">+ ₹1500</span> + ₹1000/month*</li>
+              <li>All EMR Features (Consultations, Billing, etc.)</li>
+              <li>Multiple device access</li>
             </ul>
-            <p class="pricing-note">For more than two Doctors, Talk to us for custom pricing</p>
-            <a href="#contact" class="cta-button">Contact Us</a>
+            
+            <div class="pricing-note">For >2 Doctors, contact for custom pricing</div>
+            <div class="pricing-tax-note">* Price excluding taxes</div>
+            <a href="#contact" class="cta-button secondary">Contact Us</a>
           </div>
         </div>
         <p class="pricing-note" style="text-align: center; margin-top: var(--spacing-md);">* Price excluding taxes</p>
@@ -1470,68 +1977,76 @@
   <!-- Privacy Policy Modal -->
   <div class="modal" id="privacyModal">
     <div class="modal-content">
-      <button class="modal-close" id="privacyClose">×</button>
-      <h2>Privacy Policy</h2>
-      <p><strong>Last Updated:</strong> January 2025</p>
-      <p>At evamed, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our EMR platform.</p>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Information We Collect</h3>
-      <p>We collect information that you provide directly to us, including:</p>
-      <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
-        <li>Personal identification information (name, email, phone number)</li>
-        <li>Professional information (clinic details, specialization)</li>
-        <li>Patient data (stored locally on your device)</li>
-        <li>Usage data and analytics</li>
-      </ul>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">How We Use Your Information</h3>
-      <p>We use the information we collect to:</p>
-      <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
-        <li>Provide, maintain, and improve our services</li>
-        <li>Process transactions and send related information</li>
-        <li>Send technical notices and support messages</li>
-        <li>Respond to your comments and questions</li>
-      </ul>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Data Security</h3>
-      <p>We implement appropriate technical and organizational measures to protect your personal information. Patient data is stored locally on your device, giving you complete control over your data.</p>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Contact Us</h3>
-      <p>If you have any questions about this Privacy Policy, please contact us at contact@evamed.in</p>
+      <div class="modal-header">
+        <h2 style="margin-bottom: 0;">Privacy Policy</h2>
+        <button class="modal-close" id="privacyClose">×</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Last Updated:</strong> January 2025</p>
+        <p>At evamed, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our EMR platform.</p>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Information We Collect</h3>
+        <p>We collect information that you provide directly to us, including:</p>
+        <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
+          <li>Personal identification information (name, email, phone number)</li>
+          <li>Professional information (clinic details, specialization)</li>
+          <li>Patient data (stored locally on your device)</li>
+          <li>Usage data and analytics</li>
+        </ul>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">How We Use Your Information</h3>
+        <p>We use the information we collect to:</p>
+        <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
+          <li>Provide, maintain, and improve our services</li>
+          <li>Process transactions and send related information</li>
+          <li>Send technical notices and support messages</li>
+          <li>Respond to your comments and questions</li>
+        </ul>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Data Security</h3>
+        <p>We implement appropriate technical and organizational measures to protect your personal information. Patient data is stored locally on your device, giving you complete control over your data.</p>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Contact Us</h3>
+        <p>If you have any questions about this Privacy Policy, please contact us at contact@evamed.in</p>
+      </div>
     </div>
   </div>
   
   <!-- Terms and Conditions Modal -->
   <div class="modal" id="termsModal">
     <div class="modal-content">
-      <button class="modal-close" id="termsClose">×</button>
-      <h2>Terms and Conditions</h2>
-      <p><strong>Last Updated:</strong> January 2025</p>
-      <p>Please read these Terms and Conditions carefully before using the evamed EMR platform.</p>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Acceptance of Terms</h3>
-      <p>By accessing and using evamed, you accept and agree to be bound by the terms and provision of this agreement.</p>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Use License</h3>
-      <p>Permission is granted to temporarily use evamed for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
-      <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
-        <li>Modify or copy the materials</li>
-        <li>Use the materials for any commercial purpose</li>
-        <li>Attempt to reverse engineer any software contained in evamed</li>
-        <li>Remove any copyright or other proprietary notations from the materials</li>
-      </ul>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Disclaimer</h3>
-      <p>The materials on evamed are provided on an 'as is' basis. evamed makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Limitations</h3>
-      <p>In no event shall evamed or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on evamed, even if evamed or an authorized representative has been notified orally or in writing of the possibility of such damage.</p>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Revisions</h3>
-      <p>evamed may revise these terms of service at any time without notice. By using this platform, you are agreeing to be bound by the then current version of these terms of service.</p>
-      
-      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Contact Us</h3>
-      <p>If you have any questions about these Terms and Conditions, please contact us at contact@evamed.in</p>
+      <div class="modal-header">
+        <h2 style="margin-bottom: 0;">Terms and Conditions</h2>
+        <button class="modal-close" id="termsClose">×</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Last Updated:</strong> January 2025</p>
+        <p>Please read these Terms and Conditions carefully before using the evamed EMR platform.</p>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Acceptance of Terms</h3>
+        <p>By accessing and using evamed, you accept and agree to be bound by the terms and provision of this agreement.</p>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Use License</h3>
+        <p>Permission is granted to temporarily use evamed for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+        <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
+          <li>Modify or copy the materials</li>
+          <li>Use the materials for any commercial purpose</li>
+          <li>Attempt to reverse engineer any software contained in evamed</li>
+          <li>Remove any copyright or other proprietary notations from the materials</li>
+        </ul>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Disclaimer</h3>
+        <p>The materials on evamed are provided on an 'as is' basis. evamed makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Limitations</h3>
+        <p>In no event shall evamed or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on evamed, even if evamed or an authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Revisions</h3>
+        <p>evamed may revise these terms of service at any time without notice. By using this platform, you are agreeing to be bound by the then current version of these terms of service.</p>
+        
+        <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Contact Us</h3>
+        <p>If you have any questions about these Terms and Conditions, please contact us at contact@evamed.in</p>
+      </div>
     </div>
   </div>
   
