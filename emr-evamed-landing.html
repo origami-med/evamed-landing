@@ -4,41 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>EvaMed - Doctor Friendly EMR</title>
+  <title>evamed - India's Most Doctor Friendly EMR</title>
   
   <!-- Favicon -->
   <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png" type="image/png">
   <link rel="shortcut icon" href="https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png" type="image/png">
   
-  <!-- Google Fonts - Distinctive Typography -->
+  <!-- Google Fonts - Distinctive Typography for Indian Market -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Color Palette - Medical/Professional with Depth */
-      --primary: #0a7c6b;
-      --primary-dark: #065a4d;
-      --primary-light: #0d9d87;
-      --accent: #ff6b6b;
-      --accent-secondary: #4ecdc4;
-      --bg-primary: #0a0e1a;
-      --bg-secondary: #141b2d;
-      --bg-tertiary: #1e2a3f;
-      --text-primary: #f0f4f8;
-      --text-secondary: #cbd5e0;
-      --text-muted: #94a3b8;
-      --card-bg: rgba(30, 42, 63, 0.6);
-      --card-border: rgba(79, 205, 196, 0.2);
-      --gradient-1: linear-gradient(135deg, #0a7c6b 0%, #0d9d87 50%, #4ecdc4 100%);
-      --gradient-2: linear-gradient(135deg, #141b2d 0%, #1e2a3f 50%, #0a0e1a 100%);
-      --gradient-3: linear-gradient(135deg, rgba(10, 124, 107, 0.1) 0%, rgba(78, 205, 196, 0.1) 100%);
+      /* Color Palette - Medical Professional Theme with Logo Colors */
+      --logo-gradient-start: #4ecdc4;
+      --logo-gradient-end: #3b82f6;
+      --primary: #06b6d4;
+      --primary-dark: #0891b2;
+      --primary-light: #22d3ee;
+      --accent: #f97316;
+      --accent-secondary: #fb923c;
+      --success: #10b981;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-tertiary: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --gradient-hero: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 25%, #7dd3fc 50%, #38bdf8 75%, #0ea5e9 100%);
+      --gradient-accent: linear-gradient(135deg, #4ecdc4 0%, #22d3ee 50%, #3b82f6 100%);
+      --gradient-subtle: linear-gradient(135deg, rgba(78, 205, 196, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%);
+      --logo-gradient: linear-gradient(180deg, #4ecdc4 0%, #3b82f6 100%);
       
       /* Typography */
-      --font-display: 'Playfair Display', serif;
-      --font-body: 'DM Sans', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-accent: 'Space Grotesk', sans-serif;
       
       /* Spacing */
       --spacing-xs: 0.5rem;
@@ -46,13 +50,19 @@
       --spacing-md: 2rem;
       --spacing-lg: 4rem;
       --spacing-xl: 6rem;
+      --spacing-2xl: 8rem;
       
       /* Effects */
-      --blur: blur(20px);
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
-      --glow: 0 0 20px rgba(78, 205, 196, 0.3);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+      --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
+      --glow: 0 0 30px rgba(78, 205, 196, 0.3);
+      --glow-blue: 0 0 30px rgba(59, 130, 246, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
     }
     
     * {
@@ -69,14 +79,14 @@
       font-family: var(--font-body);
       background: var(--bg-primary);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
     
-    /* Animated Background */
-    .bg-animation {
+    /* Animated Background Pattern */
+    .bg-pattern {
       position: fixed;
       top: 0;
       left: 0;
@@ -84,41 +94,17 @@
       height: 100%;
       z-index: -1;
       background: var(--bg-primary);
-      overflow: hidden;
-    }
-    
-    .bg-animation::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at 20% 50%, rgba(10, 124, 107, 0.15) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 40% 20%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
-      animation: float 20s ease-in-out infinite;
-    }
-    
-    .bg-animation::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
+      opacity: 0.4;
       background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(78, 205, 196, 0.03) 2px, rgba(78, 205, 196, 0.03) 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(10, 124, 107, 0.03) 2px, rgba(10, 124, 107, 0.03) 4px);
-      background-size: 40px 40px;
-      animation: gridMove 30s linear infinite;
+        radial-gradient(circle at 20% 30%, rgba(78, 205, 196, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.04) 0%, transparent 50%);
+      animation: patternMove 30s ease-in-out infinite;
     }
     
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      33% { transform: translate(30px, -30px) rotate(120deg); }
-      66% { transform: translate(-20px, 20px) rotate(240deg); }
-    }
-    
-    @keyframes gridMove {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(40px, 40px); }
+    @keyframes patternMove {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-20px, -20px) scale(1.05); }
     }
     
     /* Header */
@@ -129,15 +115,16 @@
       right: 0;
       z-index: 1000;
       padding: var(--spacing-sm) var(--spacing-md);
-      background: rgba(10, 14, 26, 0.8);
-      backdrop-filter: var(--blur);
-      border-bottom: 1px solid rgba(78, 205, 196, 0.1);
-      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-sm);
     }
     
     header.scrolled {
-      background: rgba(10, 14, 26, 0.95);
       box-shadow: var(--shadow-md);
+      background: rgba(255, 255, 255, 0.98);
     }
     
     nav {
@@ -156,51 +143,103 @@
       color: var(--text-primary);
       font-family: var(--font-display);
       font-size: 1.5rem;
-      font-weight: 600;
-      transition: transform 0.3s ease;
+      font-weight: 700;
+      transition: all 0.3s ease;
     }
     
     .logo:hover {
-      transform: scale(1.05);
+      transform: translateY(-2px);
+    }
+    
+    .logo-container {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: var(--logo-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md), var(--glow);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    
+    .logo:hover .logo-container {
+      transform: rotate(5deg) scale(1.05);
+      box-shadow: var(--shadow-lg), 0 0 40px rgba(78, 205, 196, 0.4);
     }
     
     .logo img {
       height: 48px;
-      width: auto;
-      filter: drop-shadow(var(--glow));
+      width: 48px;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .logo-text {
+      font-weight: 700;
+      background: var(--logo-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
     .nav-links {
       display: flex;
       gap: var(--spacing-md);
       list-style: none;
+      align-items: center;
     }
     
     .nav-links a {
       color: var(--text-secondary);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
       position: relative;
+      padding: var(--spacing-xs) 0;
     }
     
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: 0;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--gradient-1);
-      transition: width 0.3s ease;
+      background: var(--gradient-accent);
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .nav-links a:hover {
-      color: var(--accent-secondary);
+      color: var(--primary);
     }
     
     .nav-links a:hover::after {
       width: 100%;
+    }
+    
+    .nav-cta {
+      padding: 0.625rem 1.5rem;
+      background: var(--gradient-accent);
+      color: white;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md), var(--glow);
+      color: white;
+    }
+    
+    .nav-cta::after {
+      display: none;
     }
     
     .mobile-menu-toggle {
@@ -211,31 +250,39 @@
       font-size: 1.5rem;
       cursor: pointer;
       padding: var(--spacing-xs);
+      transition: transform 0.3s ease;
+    }
+    
+    .mobile-menu-toggle.active {
+      transform: rotate(90deg);
     }
     
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 70px;
+      top: 80px;
       left: 0;
       right: 0;
-      background: rgba(10, 14, 26, 0.98);
-      backdrop-filter: var(--blur);
-      border-bottom: 1px solid rgba(78, 205, 196, 0.1);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
       padding: var(--spacing-md);
       transform: translateY(-100%);
-      transition: transform 0.3s ease;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-lg);
     }
     
     .mobile-menu.active {
       transform: translateY(0);
+      opacity: 1;
     }
     
     .mobile-menu ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-md);
+      gap: var(--spacing-sm);
     }
     
     .mobile-menu a {
@@ -245,13 +292,13 @@
       font-size: 1.1rem;
       display: block;
       padding: var(--spacing-sm);
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       transition: all 0.3s ease;
     }
     
     .mobile-menu a:hover {
-      color: var(--accent-secondary);
-      background: rgba(78, 205, 196, 0.1);
+      color: var(--primary);
+      background: var(--gradient-subtle);
     }
     
     /* Hero Section */
@@ -260,66 +307,104 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: var(--spacing-xl) var(--spacing-md);
+      padding: calc(80px + var(--spacing-xl)) var(--spacing-md) var(--spacing-xl);
       position: relative;
       overflow: hidden;
+      background: var(--gradient-hero);
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 25s ease-in-out infinite reverse;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(1.1); }
     }
     
     .hero-content {
       max-width: 1200px;
       text-align: center;
       z-index: 1;
-      animation: fadeInUp 1s ease-out;
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      position: relative;
     }
     
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 700;
+      font-size: clamp(2.5rem, 7vw, 5.5rem);
+      font-weight: 800;
       margin-bottom: var(--spacing-md);
-      background: var(--gradient-1);
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .hero h1 .highlight {
+      background: var(--gradient-accent);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      animation: fadeInUp 1s ease-out 0.2s both;
+      display: block;
     }
     
     .hero p {
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
       color: var(--text-secondary);
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto var(--spacing-lg);
       line-height: 1.8;
-      animation: fadeInUp 1s ease-out 0.4s both;
+      font-weight: 400;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
     }
     
     .cta-button {
       display: inline-block;
       padding: 1rem 2.5rem;
-      background: var(--gradient-1);
-      color: var(--text-primary);
+      background: var(--gradient-accent);
+      color: white;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
       border-radius: 50px;
       box-shadow: var(--shadow-md), var(--glow);
-      transition: all 0.3s ease;
-      animation: fadeInUp 1s ease-out 0.6s both;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
+    }
+    
+    .cta-button.secondary {
+      background: white;
+      color: var(--primary);
+      box-shadow: var(--shadow-md);
     }
     
     .cta-button::before {
@@ -341,26 +426,59 @@
     }
     
     .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg), 0 0 30px rgba(78, 205, 196, 0.5);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg), var(--glow), var(--glow-blue);
     }
     
-    /* Features Section */
-    .features {
+    .cta-button.secondary:hover {
+      background: var(--bg-secondary);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Section Styles */
+    section {
       padding: var(--spacing-xl) var(--spacing-md);
-      max-width: 1400px;
-      margin: 0 auto;
+      position: relative;
     }
     
     .section-title {
       text-align: center;
       font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      margin-bottom: var(--spacing-xl);
-      background: var(--gradient-1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: var(--spacing-md);
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto var(--spacing-xl);
+      line-height: 1.7;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    /* Features Section */
+    .features {
+      background: var(--bg-primary);
     }
     
     .features-grid {
@@ -372,19 +490,14 @@
     
     .feature-card {
       background: var(--card-bg);
-      backdrop-filter: var(--blur);
       border: 1px solid var(--card-border);
-      border-radius: 24px;
+      border-radius: var(--radius-lg);
       padding: var(--spacing-lg);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      animation: fadeInUp 0.8s ease-out both;
+      box-shadow: var(--shadow-sm);
     }
-    
-    .feature-card:nth-child(1) { animation-delay: 0.1s; }
-    .feature-card:nth-child(2) { animation-delay: 0.2s; }
-    .feature-card:nth-child(3) { animation-delay: 0.3s; }
     
     .feature-card::before {
       content: '';
@@ -392,30 +505,27 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background: var(--gradient-3);
-      opacity: 0;
-      transition: opacity 0.4s ease;
+      height: 4px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .feature-card:hover::before {
-      opacity: 1;
+      transform: scaleX(1);
     }
     
     .feature-card:hover {
       transform: translateY(-8px);
-      border-color: var(--accent-secondary);
+      border-color: var(--primary-light);
       box-shadow: var(--shadow-lg), var(--glow);
-    }
-    
-    .feature-card-content {
-      position: relative;
-      z-index: 1;
     }
     
     .feature-card h2 {
       font-family: var(--font-display);
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.5rem, 3vw, 1.75rem);
+      font-weight: 700;
       margin-bottom: var(--spacing-md);
       color: var(--text-primary);
     }
@@ -435,61 +545,484 @@
     }
     
     .feature-card li::before {
-      content: '→';
+      content: '✓';
       position: absolute;
       left: 0;
-      color: var(--accent-secondary);
+      color: var(--primary);
       font-weight: bold;
+      font-size: 1.2rem;
       transition: transform 0.3s ease;
     }
     
     .feature-card:hover li::before {
-      transform: translateX(4px);
+      transform: scale(1.2) rotate(5deg);
     }
     
     .video-container {
       margin-top: var(--spacing-md);
-      border-radius: 16px;
+      border-radius: var(--radius-md);
       overflow: hidden;
       position: relative;
       aspect-ratio: 16 / 9;
-      background: var(--bg-secondary);
-      border: 1px solid rgba(78, 205, 196, 0.2);
+      background: var(--bg-tertiary);
+      border: 1px solid var(--card-border);
       box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
     }
     
-    .video-container iframe,
-    .video-container video,
-    .video-container wix-video {
+    .video-container:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-lg), 0 0 20px rgba(78, 205, 196, 0.2);
+      transform: scale(1.02);
+    }
+    
+    .video-container iframe {
       width: 100%;
       height: 100%;
       border: none;
       display: block;
     }
     
-    .video-container wix-video {
-      min-height: 100%;
+    /* Pricing Section */
+    .pricing {
+      background: var(--bg-secondary);
     }
     
-    /* Video placeholder for wix-video elements */
-    .video-container::after {
-      content: '';
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-lg);
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .pricing-card {
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .pricing-card.featured {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md), var(--glow);
+      transform: scale(1.05);
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg), var(--glow);
+    }
+    
+    .pricing-card.featured:hover {
+      transform: scale(1.05) translateY(-8px);
+    }
+    
+    .pricing-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .pricing-price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: var(--spacing-md) 0;
+      font-family: var(--font-display);
+    }
+    
+    .pricing-price .period {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    
+    .pricing-features {
+      list-style: none;
+      margin: var(--spacing-md) 0;
+      flex-grow: 1;
+    }
+    
+    .pricing-features li {
+      padding: var(--spacing-xs) 0;
+      padding-left: var(--spacing-md);
+      position: relative;
+      color: var(--text-secondary);
+    }
+    
+    .pricing-features li::before {
+      content: '✓';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
-      border: 3px solid var(--accent-secondary);
-      border-top-color: transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      opacity: 0.5;
-      pointer-events: none;
+      left: 0;
+      color: var(--success);
+      font-weight: bold;
     }
     
-    @keyframes spin {
-      to { transform: translate(-50%, -50%) rotate(360deg); }
+    .pricing-card .cta-button {
+      width: 100%;
+      text-align: center;
+      margin-top: var(--spacing-md);
+    }
+    
+    .pricing-note {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: var(--spacing-sm);
+      text-align: center;
+    }
+    
+    .pricing-strikethrough {
+      text-decoration: line-through;
+      color: var(--text-muted);
+      margin-right: var(--spacing-xs);
+    }
+    
+    /* Add-ons Section */
+    .addons {
+      background: var(--bg-primary);
+    }
+    
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-lg);
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .addon-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .addon-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg), var(--glow);
+    }
+    
+    .addon-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+    
+    .addon-card p {
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.7;
+    }
+    
+    .addon-price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: var(--font-display);
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      background: var(--bg-secondary);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-lg);
+    }
+    
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .testimonial-text {
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.8;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--text-primary);
+      font-family: var(--font-display);
+    }
+    
+    /* Contact Section */
+    .contact {
+      background: var(--bg-primary);
+    }
+    
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .contact-form {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .form-group {
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: var(--spacing-xs);
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--gradient-accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg), var(--glow);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--card-border);
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      text-decoration: none;
+      color: var(--text-primary);
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .footer-logo .logo-container {
+      width: 48px;
+      height: 48px;
+    }
+    
+    .footer-logo img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+    
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-sm);
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid var(--card-border);
+    }
+    
+    .social-icon:hover {
+      background: var(--gradient-accent);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    /* Modal for Privacy Policy and Terms */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-md);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .modal.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .modal-content {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: var(--spacing-md);
+      right: var(--spacing-md);
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .modal-close:hover {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+    
+    .modal h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      margin-bottom: var(--spacing-md);
+      color: var(--text-primary);
+    }
+    
+    .modal p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--spacing-sm);
     }
     
     /* Responsive Design */
@@ -497,6 +1030,7 @@
       :root {
         --spacing-lg: 2rem;
         --spacing-xl: 3rem;
+        --spacing-2xl: 4rem;
       }
       
       header {
@@ -519,49 +1053,98 @@
         font-size: 1.2rem;
       }
       
+      .logo-container {
+        width: 44px;
+        height: 44px;
+      }
+      
       .logo img {
         height: 36px;
+        width: 36px;
       }
       
       .hero {
-        padding: var(--spacing-lg) var(--spacing-sm);
-        min-height: 90vh;
+        padding: calc(70px + var(--spacing-lg)) var(--spacing-sm) var(--spacing-lg);
+        min-height: auto;
       }
       
-      .features-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-      }
-      
-      .feature-card {
-        padding: var(--spacing-md);
-      }
-    }
-    
-    @media (max-width: 480px) {
       .hero h1 {
         font-size: 2.5rem;
       }
       
       .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
       }
       
       .cta-button {
-        padding: 0.875rem 2rem;
-        font-size: 1rem;
+        width: 100%;
+      }
+      
+      .features-grid,
+      .pricing-grid,
+      .addons-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+      
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+      
+      .pricing-card.featured:hover {
+        transform: translateY(-8px);
+      }
+      
+      .addons-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .footer-social {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+      }
+      
+      .feature-card,
+      .pricing-card,
+      .addon-card {
+        padding: var(--spacing-md);
       }
     }
     
     /* Scroll Animations */
     @media (prefers-reduced-motion: no-preference) {
-      .feature-card {
+      .feature-card,
+      .pricing-card,
+      .addon-card,
+      .testimonial-card {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.6s ease, transform 0.6s ease;
       }
       
-      .feature-card.visible {
+      .feature-card.visible,
+      .pricing-card.visible,
+      .addon-card.visible,
+      .testimonial-card.visible {
         opacity: 1;
         transform: translateY(0);
       }
@@ -577,114 +1160,384 @@
     }
     
     ::-webkit-scrollbar-thumb {
-      background: var(--gradient-1);
+      background: var(--gradient-accent);
       border-radius: 5px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--primary-light);
+      background: linear-gradient(180deg, #22d3ee 0%, #3b82f6 100%);
     }
   </style>
 </head>
 <body>
-  <div class="bg-animation"></div>
+  <div class="bg-pattern"></div>
   
   <header id="header">
     <nav>
       <a href="#" class="logo">
-        <img src="https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png" alt="EvaMed Logo">
-        <span>EvaMed</span>
+        <div class="logo-container">
+          <img src="https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png" alt="evamed Logo">
+        </div>
+        <span class="logo-text">evamed</span>
       </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
       </ul>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="#features">Features</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
       </ul>
     </div>
   </header>
   
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Doctor Friendly EMR</h1>
+        <h1>India's most<br><span class="highlight">Doctor Friendly EMR</span></h1>
         <p>Only our EMR combines an industry-first True Private Network for total local data control, a Forever Free plan to explore without limits, and more features than any competing platform.</p>
-        <a href="#features" class="cta-button">Explore Features</a>
+        <div class="hero-buttons">
+          <a href="#contact" class="cta-button">Contact Us</a>
+          <a href="#features" class="cta-button secondary">More on Youtube</a>
+        </div>
       </div>
     </section>
     
+    <!-- Why You'll Love It Section -->
     <section class="features" id="features">
-      <h2 class="section-title">Powerful Features</h2>
+      <div class="container">
+        <h2 class="section-title">Why You'll Love It</h2>
+        <p class="section-subtitle">Consultations | Procedures | Billing | Reminders | Research | Pharmacy | WhatsApp</p>
       
       <div class="features-grid">
         <!-- Feature 1 -->
         <div class="feature-card">
           <div class="feature-card-content">
-            <h2>Improve conversion and keep track of procedures</h2>
+              <h2>Complete prescriptions and procedures within 30 seconds</h2>
             <ul>
               <li>Instantly access 3L+ medicines and generic names kept up to date</li>
+                <li>Quickly Dictate prescriptions with the Power of AI</li>
               <li>Send prescriptions in local languages instantly with WhatsApp</li>
-              <li>Capture photos from your phone; compress and save them</li>
+                <li>Quickly complete consultation and capture photos from your phone</li>
+              </ul>
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/YznmKYLcJJ8" title="evamed Feature Video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-card-content">
+              <h2>Improve conversion and keep track of procedures</h2>
+              <ul>
               <li>Create and share Treatment Plans and estimates</li>
               <li>Capture and compare before and after images</li>
               <li>Create Packages for easy reuse</li>
             </ul>
             <div class="video-container">
-              <wix-video id="videoContainer_comp-lk89tpyf" data-video-info='{"fittingType":"fill","alignType":"center","hasBgScrollEffect":"","bgEffectName":"","videoId":"f3848c_da20cad6e741454e8f2e240db58d4d40","videoWidth":1920,"videoHeight":1080}'></wix-video>
+                <iframe src="https://www.youtube.com/embed/xP5naBDGTxA" title="evamed Feature Video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
         
-        <!-- Feature 2 -->
+          <!-- Feature 3 -->
         <div class="feature-card">
           <div class="feature-card-content">
             <h2>Handle Billing, Follow-Ups, and Insights with Ease</h2>
             <ul>
-              <li>Streamline billing processes with automated invoicing</li>
-              <li>Schedule and manage patient follow-ups effortlessly</li>
-              <li>Generate comprehensive insights and reports</li>
-              <li>Track revenue and financial analytics</li>
-              <li>Automated payment reminders</li>
-              <li>Multi-payment gateway integration</li>
+                <li>Send GST-compliant bills to patients instantly without errors</li>
+                <li>Never miss a follow-up with WhatsApp reminders</li>
+                <li>Quickly see trends and research your patient data to make informed decisions</li>
             </ul>
             <div class="video-container">
-              <wix-video class="VideoPlayer2054936319__root comp-mgh8krw49" aria-label="Your Video Title Video Player"></wix-video>
+                <iframe src="https://www.youtube.com/embed/pbx590JT2qw" title="evamed Feature Video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
         
-        <!-- Feature 3 -->
+          <!-- Feature 4 -->
         <div class="feature-card">
           <div class="feature-card-content">
-            <h2>Total Control and Full Flexibility over Patient Data</h2>
-            <ul>
-              <li>Access patient data from anywhere with evamed True Private Network</li>
-              <li>Complete data ownership and privacy control</li>
-              <li>Local data storage with cloud sync options</li>
-              <li>Advanced security and encryption</li>
-              <li>Customizable data fields and templates</li>
-              <li>Export and backup capabilities</li>
+              <h2>Complete Control over Your Patient Data</h2>
+              <ul>
+                <li>Keep full control with patient data stored locally on computer</li>
+                <li>Access patient data from anywhere using your Google Drive</li>
+                <li>Work seamlessly with your Laptop, mobile, Tab with instant sync</li>
             </ul>
             <div class="video-container">
-              <wix-video class="VideoPlayer2054936319__root comp-mgh9536h2" aria-label="Your Video Title Video Player"></wix-video>
+                <iframe src="https://www.youtube.com/embed/M81fHd1Jhg8" title="evamed Feature Video 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <h2 class="section-title">Manage Patients Seamlessly<br>Stay Legally Compliant</h2>
+        
+        <div class="pricing-grid">
+          <!-- Forever Free Plan -->
+          <div class="pricing-card">
+            <h3>Forever Free</h3>
+            <div class="pricing-price">No Charges</div>
+            <ul class="pricing-features">
+              <li>Trial at your own pace</li>
+              <li>All features in Premium Plan</li>
+              <li>Access to all future updates</li>
+              <li>Add upto 10 patients a month</li>
+            </ul>
+            <a href="#contact" class="cta-button">Contact Us</a>
+          </div>
+          
+          <!-- Premium Plan -->
+          <div class="pricing-card featured">
+            <h3>Premium</h3>
+            <div class="pricing-price">
+              <span class="pricing-strikethrough">₹2000</span> ₹1700<span class="period">/month*</span>
+            </div>
+            <p class="pricing-note" style="margin-bottom: var(--spacing-sm);">Billed Annually</p>
+            <ul class="pricing-features">
+              <li>Single Clinic</li>
+              <li>All EMR Features - Consultations, Procedures, Dictation, Billing ++ more</li>
+              <li>Multiple device access across computer, tablet, mobile</li>
+              <li>Two Doctors: <span class="pricing-strikethrough">+ ₹1000</span> + ₹500/month*</li>
+            </ul>
+            <p class="pricing-note">For more than two Doctors, Talk to us for custom pricing</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+          </div>
+          
+          <!-- Premium Plus Plan -->
+          <div class="pricing-card">
+            <h3>Premium Plus</h3>
+            <div class="pricing-price">
+              <span class="pricing-strikethrough">₹2500</span> ₹1700<span class="period">/month*</span>
+            </div>
+            <p class="pricing-note" style="margin-bottom: var(--spacing-sm);">Billed Annually</p>
+            <ul class="pricing-features">
+              <li>Multiple Clinics</li>
+              <li>All EMR Features - Consultations, Procedures, Dictation, Billing ++ more</li>
+              <li>Multiple device access across computer, tablet, mobile</li>
+              <li>Two Doctors: <span class="pricing-strikethrough">+ ₹1500</span> + ₹1000/month*</li>
+            </ul>
+            <p class="pricing-note">For more than two Doctors, Talk to us for custom pricing</p>
+            <a href="#contact" class="cta-button">Contact Us</a>
+          </div>
+        </div>
+        <p class="pricing-note" style="text-align: center; margin-top: var(--spacing-md);">* Price excluding taxes</p>
+      </div>
+    </section>
+    
+    <!-- Add-ons Section -->
+    <section class="addons" id="addons">
+      <div class="container">
+        <h2 class="section-title">Unlock the full potential of <span style="background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">evamed</span> with our Add-ons</h2>
+        
+        <div class="addons-grid">
+          <!-- Integrated Pharmacy -->
+          <div class="addon-card">
+            <h3>Integrated Pharmacy</h3>
+            <p>Manage your own in-clinic pharmacy in sync with your consultations.</p>
+            <p class="pricing-note" style="margin-bottom: var(--spacing-xs);">Billed Annually</p>
+            <div class="addon-price">
+              <span class="pricing-strikethrough">₹1000</span> ₹550<span style="font-size: 1rem; font-weight: 500;">/month*</span>
+            </div>
+            <p class="pricing-note">* Price excluding taxes</p>
+          </div>
+          
+          <!-- AI Dictation -->
+          <div class="addon-card">
+            <h3>AI Dictation</h3>
+            <p>Fast, accurate speech-to-text built on Google's latest AI models.</p>
+            <p class="pricing-note" style="margin-bottom: var(--spacing-xs);">Billed Annually</p>
+            <div class="addon-price">₹6000<span style="font-size: 1rem; font-weight: 500;">/year*</span></div>
+            <p class="pricing-note">* Price excluding taxes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">TESTIMONIALS</h2>
+        <p class="section-subtitle">What our clients are saying</p>
+        
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">This is the space to share a review from one of the business's clients or customers.</p>
+            <p class="testimonial-author">— Leah Yurfset</p>
+          </div>
+          
+          <div class="testimonial-card">
+            <p class="testimonial-text">This is the space to share a review from one of the business's clients or customers.</p>
+            <p class="testimonial-author">— Roy Gold</p>
+          </div>
+          
+          <div class="testimonial-card">
+            <p class="testimonial-text">This is the space to share a review from one of the business's clients or customers.</p>
+            <p class="testimonial-author">— Nela Yliuay</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact us</h2>
+        <div class="contact-container">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="mobile">Mobile Number</label>
+              <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <button type="submit" class="form-submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <div class="logo-container">
+            <img src="https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png" alt="evamed Logo">
+          </div>
+          <span class="logo-text">evamed</span>
+        </a>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">India's most Doctor Friendly EMR</p>
+      </div>
+      
+      <div>
+        <h3 style="font-family: var(--font-display); margin-bottom: var(--spacing-sm); color: var(--text-primary);">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 style="font-family: var(--font-display); margin-bottom: var(--spacing-sm); color: var(--text-primary);">Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#" id="privacyLink">Privacy Policy</a></li>
+          <li><a href="#" id="termsLink">Terms and Conditions</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 style="font-family: var(--font-display); margin-bottom: var(--spacing-sm); color: var(--text-primary);">Connect</h3>
+        <div class="footer-social">
+          <a href="mailto:contact@evamed.in" class="social-icon" aria-label="Email">✉</a>
+          <a href="https://youtube.com/@evamed" target="_blank" class="social-icon" aria-label="YouTube">▶</a>
+          <a href="https://instagram.com/evamed" target="_blank" class="social-icon" aria-label="Instagram">📷</a>
+          <a href="https://facebook.com/evamed" target="_blank" class="social-icon" aria-label="Facebook">f</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 by Innovea Logitech</p>
+    </div>
+  </footer>
+  
+  <!-- Privacy Policy Modal -->
+  <div class="modal" id="privacyModal">
+    <div class="modal-content">
+      <button class="modal-close" id="privacyClose">×</button>
+      <h2>Privacy Policy</h2>
+      <p><strong>Last Updated:</strong> January 2025</p>
+      <p>At evamed, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our EMR platform.</p>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Information We Collect</h3>
+      <p>We collect information that you provide directly to us, including:</p>
+      <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
+        <li>Personal identification information (name, email, phone number)</li>
+        <li>Professional information (clinic details, specialization)</li>
+        <li>Patient data (stored locally on your device)</li>
+        <li>Usage data and analytics</li>
+      </ul>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">How We Use Your Information</h3>
+      <p>We use the information we collect to:</p>
+      <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
+        <li>Provide, maintain, and improve our services</li>
+        <li>Process transactions and send related information</li>
+        <li>Send technical notices and support messages</li>
+        <li>Respond to your comments and questions</li>
+      </ul>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Data Security</h3>
+      <p>We implement appropriate technical and organizational measures to protect your personal information. Patient data is stored locally on your device, giving you complete control over your data.</p>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Contact Us</h3>
+      <p>If you have any questions about this Privacy Policy, please contact us at contact@evamed.in</p>
+    </div>
+  </div>
+  
+  <!-- Terms and Conditions Modal -->
+  <div class="modal" id="termsModal">
+    <div class="modal-content">
+      <button class="modal-close" id="termsClose">×</button>
+      <h2>Terms and Conditions</h2>
+      <p><strong>Last Updated:</strong> January 2025</p>
+      <p>Please read these Terms and Conditions carefully before using the evamed EMR platform.</p>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Acceptance of Terms</h3>
+      <p>By accessing and using evamed, you accept and agree to be bound by the terms and provision of this agreement.</p>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Use License</h3>
+      <p>Permission is granted to temporarily use evamed for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+      <ul style="margin-left: var(--spacing-md); color: var(--text-secondary); line-height: 1.8;">
+        <li>Modify or copy the materials</li>
+        <li>Use the materials for any commercial purpose</li>
+        <li>Attempt to reverse engineer any software contained in evamed</li>
+        <li>Remove any copyright or other proprietary notations from the materials</li>
+      </ul>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Disclaimer</h3>
+      <p>The materials on evamed are provided on an 'as is' basis. evamed makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Limitations</h3>
+      <p>In no event shall evamed or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on evamed, even if evamed or an authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Revisions</h3>
+      <p>evamed may revise these terms of service at any time without notice. By using this platform, you are agreeing to be bound by the then current version of these terms of service.</p>
+      
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-family: var(--font-display);">Contact Us</h3>
+      <p>If you have any questions about these Terms and Conditions, please contact us at contact@evamed.in</p>
+    </div>
+  </div>
   
   <script>
     // Header scroll effect
     const header = document.getElementById('header');
-    let lastScroll = 0;
     
     window.addEventListener('scroll', () => {
       const currentScroll = window.pageYOffset;
@@ -694,8 +1547,6 @@
       } else {
         header.classList.remove('scrolled');
       }
-      
-      lastScroll = currentScroll;
     });
     
     // Intersection Observer for scroll animations
@@ -712,24 +1563,34 @@
       });
     }, observerOptions);
     
-    document.querySelectorAll('.feature-card').forEach(card => {
+    document.querySelectorAll('.feature-card, .pricing-card, .addon-card, .testimonial-card').forEach(card => {
       observer.observe(card);
     });
     
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          const headerHeight = header.offsetHeight;
+          const targetPosition = target.offsetTop - headerHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
           });
+          
           // Close mobile menu if open
           const mobileMenu = document.getElementById('mobileMenu');
-          if (mobileMenu) {
+          const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+          if (mobileMenu && mobileMenu.classList.contains('active')) {
             mobileMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.textContent = '☰';
           }
         }
       });
@@ -742,9 +1603,98 @@
     if (mobileMenuToggle && mobileMenu) {
       mobileMenuToggle.addEventListener('click', () => {
         mobileMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('active');
         mobileMenuToggle.textContent = mobileMenu.classList.contains('active') ? '✕' : '☰';
       });
     }
+    
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+          name: document.getElementById('name').value,
+          mobile: document.getElementById('mobile').value,
+          email: document.getElementById('email').value
+        };
+        
+        // Here you would typically send this to a server
+        console.log('Form submitted:', formData);
+        
+        // Show success message (you can customize this)
+        alert('Thank you for contacting us! We will get back to you soon.');
+        
+        // Reset form
+        contactForm.reset();
+      });
+    }
+    
+    // Modal functionality
+    const privacyLink = document.getElementById('privacyLink');
+    const termsLink = document.getElementById('termsLink');
+    const privacyModal = document.getElementById('privacyModal');
+    const termsModal = document.getElementById('termsModal');
+    const privacyClose = document.getElementById('privacyClose');
+    const termsClose = document.getElementById('termsClose');
+    
+    if (privacyLink && privacyModal) {
+      privacyLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        privacyModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+    
+    if (termsLink && termsModal) {
+      termsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        termsModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+    
+    if (privacyClose) {
+      privacyClose.addEventListener('click', () => {
+        privacyModal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+    
+    if (termsClose) {
+      termsClose.addEventListener('click', () => {
+        termsModal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+    
+    // Close modal on outside click
+    [privacyModal, termsModal].forEach(modal => {
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (privacyModal && privacyModal.classList.contains('active')) {
+          privacyModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        if (termsModal && termsModal.classList.contains('active')) {
+          termsModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    });
         </script>
 </body>
 </html>
