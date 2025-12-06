@@ -35,6 +35,8 @@
           v-for="btn in config.hero.buttons" 
           :key="btn.href"
           :href="btn.href" 
+          :target="btn.target || undefined"
+          :rel="btn.target === '_blank' ? 'noopener noreferrer' : undefined"
           :class="[
             'cta-button inline-block px-11 py-[1.125rem] no-underline font-semibold text-lg font-body rounded-full transition-all duration-300 relative overflow-hidden border-2 border-transparent hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-glow-strong',
             btn.isPrimary 

@@ -51,7 +51,7 @@ export const config = {
     subtitle: "Only our EMR combines an industry-first True Private Network for total local data control, a Forever Free plan to explore without limits, and more features than any competing platform.",
     buttons: [
       { text: "Contact Us", href: "#contact", isPrimary: true },
-      { text: "More on Youtube", href: "#features", isPrimary: false },
+      { text: "More on Youtube", href: "https://www.youtube.com/@evamed-emr", isPrimary: false, target: "_blank" },
     ],
   },
 
@@ -67,7 +67,7 @@ export const config = {
           "Instantly access 3L+ medicines and generic names kept up to date",
           "Quickly Dictate prescriptions with the Power of AI",
           "Send prescriptions in local languages instantly with WhatsApp",
-          "Quickly complete consultation and capture photos from your phone",
+          "Capture photos from your phone; compress and save them",
         ],
         videoUrl: "https://www.youtube.com/embed/YznmKYLcJJ8",
         videoTitle: "evamed Smart Prescriptions Feature",
@@ -89,17 +89,17 @@ export const config = {
         bullets: [
           "Send GST-compliant bills to patients instantly without errors",
           "Never miss a follow-up with WhatsApp reminders",
-          "Quickly see trends and research your patient data to make informed decisions",
+          "Quickly see trends and research patient data to make informed decisions.",
         ],
         videoUrl: "https://www.youtube.com/embed/pbx590JT2qw",
         videoTitle: "evamed Practice Management Feature",
       },
       {
         tag: "Data Security",
-        title: "Complete Control over Your Patient Data",
+        title: "Total Control and Full Flexibility over Patient Data",
         bullets: [
           "Keep full control with patient data stored locally on computer",
-          "Access patient data from anywhere using your Google Drive",
+          "Access patient data from anywhere with evamed True Private Network",
           "Work seamlessly with your Laptop, mobile, Tab with instant sync",
         ],
         videoUrl: "https://www.youtube.com/embed/M81fHd1Jhg8",
@@ -229,18 +229,36 @@ export const config = {
         label: "Name",
         placeholder: "Enter your name",
         required: true,
+        type: "text",
+        fieldType: "CONTACTS_FIRST_NAME",
       },
       mobile: {
         label: "Mobile Number",
         placeholder: "Enter your mobile number",
         required: true,
+        type: "tel",
+        inputMode: "tel",
+        fieldType: "CONTACTS_PHONE",
       },
       email: {
         label: "Email",
         placeholder: "Enter your email",
         required: true,
+        type: "email",
+        fieldType: "CONTACTS_EMAIL",
       },
       submitText: "Submit",
+      // Form submission configuration
+      submission: {
+        // Set to true if you want to use an API endpoint
+        useApi: false,
+        // API endpoint URL (if useApi is true)
+        apiEndpoint: null,
+        // Success message
+        successMessage: "Thank you for contacting us! We will get back to you soon.",
+        // Error message
+        errorMessage: "There was an error submitting your form. Please try again.",
+      },
     },
   },
 
@@ -249,10 +267,10 @@ export const config = {
     description: "India's most Doctor Friendly EMR",
     copyright: "© 2025 by Innovea Logitech",
     social: [
-      { name: "Email", icon: "✉", href: "mailto:contact@evamed.in", ariaLabel: "Email" },
-      { name: "YouTube", icon: "▶", href: "https://youtube.com/@evamed", ariaLabel: "YouTube" },
-      { name: "Instagram", icon: "📷", href: "https://instagram.com/evamed", ariaLabel: "Instagram" },
-      { name: "Facebook", icon: "f", href: "https://facebook.com/evamed", ariaLabel: "Facebook" },
+      { name: "Email", icon: "✉", href: "mailto:contactus@evamed.in", ariaLabel: "Gmail" },
+      { name: "YouTube", icon: "▶", href: "https://www.youtube.com/@evamed-emr", ariaLabel: "Youtube", target: "_blank" },
+      { name: "Instagram", icon: "📷", href: "https://www.instagram.com/evamed.tech/", ariaLabel: "Instagram", target: "_blank" },
+      { name: "Facebook", icon: "f", href: "https://www.facebook.com/profile.php?id=61578981484207", ariaLabel: "Facebook", target: "_blank" },
     ],
   },
 

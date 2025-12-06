@@ -42,7 +42,8 @@
             v-for="social in config.footer.social" 
             :key="social.name"
             :href="social.href" 
-            :target="social.href.startsWith('http') ? '_blank' : ''"
+            :target="social.target || undefined"
+            :rel="social.target === '_blank' ? 'noopener noreferrer' : undefined"
             class="social-icon w-10 h-10 rounded-full bg-bg-tertiary flex items-center justify-center text-text-secondary no-underline transition-all duration-300 border border-card-border hover:bg-gradient-accent hover:text-white hover:-translate-y-1 hover:shadow-md hover:border-transparent"
             :aria-label="social.ariaLabel"
           >
