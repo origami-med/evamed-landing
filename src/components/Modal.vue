@@ -5,11 +5,11 @@
     @click.self="close"
   >
     <div 
-      class="modal-content bg-card-bg rounded-3xl w-full max-w-[800px] max-h-[85vh] shadow-xl relative transform transition-transform duration-300 flex flex-col overflow-hidden p-0"
+      class="modal-content bg-card-bg rounded-lg w-full max-w-[800px] max-h-[85vh] shadow-xl relative transform transition-transform duration-300 flex flex-col overflow-hidden p-0"
       :class="{ 'scale-90': !isOpen, 'scale-100': isOpen }"
     >
-      <div class="modal-header p-16 pb-4 flex-shrink-0 flex justify-between items-center bg-card-bg z-10">
-        <h2 class="font-display text-3xl mb-0 text-text-primary">{{ title }}</h2>
+      <div class="modal-header p-6 pb-4 flex-shrink-0 flex justify-between items-center bg-card-bg z-10">
+        <h2 class="font-display text-2xl mb-0 text-text-primary">{{ title }}</h2>
         <button 
           class="modal-close bg-transparent border-0 text-2xl text-text-secondary cursor-pointer w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 hover:bg-bg-tertiary hover:text-text-primary" 
           @click="close"
@@ -17,13 +17,13 @@
           ×
         </button>
       </div>
-      <div class="modal-body p-16 pt-0 overflow-y-auto flex-grow">
-        <p class="text-text-secondary leading-[1.8] mb-4"><strong>Last Updated:</strong> {{ lastUpdated }}</p>
+      <div class="modal-body p-6 pt-0 overflow-y-auto flex-grow">
+        <p class="text-text-secondary text-sm leading-[1.7] mb-4"><strong>Last Updated:</strong> {{ lastUpdated }}</p>
         <template v-for="(item, index) in content" :key="index">
-          <h3 v-if="item.type === 'heading'" class="mt-8 mb-4 font-display text-xl">{{ item.text }}</h3>
-          <p v-else-if="item.type === 'paragraph'" class="text-text-secondary leading-[1.8] mb-4">{{ item.text }}</p>
-          <ul v-else-if="item.type === 'list'" class="ml-8 text-text-secondary leading-[1.8] mb-4 list-disc">
-            <li v-for="(li, liIndex) in item.items" :key="liIndex" class="mb-2">{{ li }}</li>
+          <h3 v-if="item.type === 'heading'" class="mt-6 mb-3 font-display text-lg">{{ item.text }}</h3>
+          <p v-else-if="item.type === 'paragraph'" class="text-text-secondary text-sm leading-[1.7] mb-3">{{ item.text }}</p>
+          <ul v-else-if="item.type === 'list'" class="ml-6 text-text-secondary text-sm leading-[1.7] mb-3 list-disc">
+            <li v-for="(li, liIndex) in item.items" :key="liIndex" class="mb-1.5">{{ li }}</li>
           </ul>
         </template>
       </div>
