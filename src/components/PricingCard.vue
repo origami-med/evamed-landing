@@ -1,75 +1,93 @@
 <template>
   <div 
-    class="pricing-card bg-white/70 backdrop-blur-xl border border-white/80 rounded-3xl p-8 transition-all duration-500 relative shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] flex flex-col overflow-hidden group"
+    class="pricing-card bg-white/90 backdrop-blur-xl border rounded-lg transition-all duration-500 relative shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] flex flex-col overflow-hidden group"
     :class="[
       plan.isFeatured 
-        ? 'featured' 
-        : ''
+        ? 'featured border-2 border-primary shadow-[0_8px_30px_-5px_rgba(0,143,189,0.25)]' 
+        : 'border border-card-border'
     ]"
     ref="cardRef"
   >
+    <!-- Popular Badge - Top right positioning -->
     <div 
       v-if="plan.badge"
-      class="popular-badge absolute top-0 right-0 bg-gradient-accent text-white text-xs font-bold px-6 py-2 shadow-[-2px_2px_10px_rgba(0,0,0,0.1)] uppercase tracking-wider"
+      class="popular-badge absolute top-0 right-0 bg-gradient-accent text-white text-[0.7rem] font-bold px-3 py-1.5 shadow-lg uppercase tracking-wider rounded-bl-2xl z-10"
     >
       {{ plan.badge }}
     </div>
-    <div class="pricing-header text-center mb-4 pb-4 border-b border-card-border">
-      <h3 class="font-display text-2xl font-extrabold mb-1 text-text-primary">
-        {{ plan.name }}
-      </h3>
-      <div class="pricing-price text-[2.5rem] font-extrabold text-primary leading-none my-1 font-body flex items-baseline justify-center text-center gap-1">
-        <template v-if="plan.price === 'Free'">
-          Free
-        </template>
-        <template v-else>
-          {{ plan.price }}<span v-if="plan.pricePeriod" class="text-sm text-text-muted font-medium">{{ plan.pricePeriod }}</span>
+    
+    <!-- Slimmer padding: p-4 for narrower cards -->
+    <div class="p-4 flex flex-col h-full">
+      <!-- Header with better hierarchy -->
+      <div class="pricing-header text-center mb-4 pt-7">
+        <h3 class="font-display text-lg font-extrabold mb-2.5 text-text-primary">
+          {{ plan.name }}
+        </h3>
+        
+        <!-- Price - More prominent -->
+        <div class="pricing-price-wrapper mb-2">
+          <div class="pricing-price text-[2.5rem] font-extrabold text-primary leading-none font-body flex items-baseline justify-center gap-1.5">
+            <template v-if="plan.price === 'Free'">
+              <span class="text-2xl">Free</span>
+            </template>
+            <template v-else>
+              <span>{{ plan.price }}</span>
+              <span v-if="plan.pricePeriod" class="text-sm text-text-muted font-semibold">{{ plan.pricePeriod }}</span>
+            </template>
+          </div>
+          <div v-if="plan.period" class="pricing-period text-xs text-text-muted font-medium mt-1">
+            {{ plan.period }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Details - Slimmer and more compact -->
+      <div v-if="plan.pricingDetails" class="pricing-details mb-4 bg-gradient-to-br from-[rgba(0,201,183,0.06)] to-[rgba(0,143,189,0.04)] border border-[rgba(0,201,183,0.2)] rounded p-3">
+        <template v-for="(detail, idx) in plan.pricingDetails" :key="idx">
+          <div class="grid grid-cols-[1fr_auto] gap-2 items-center py-1.5">
+            <div class="pricing-label text-text-secondary font-semibold text-xs">
+              {{ detail.label }}
+            </div>
+            <div class="pricing-value text-text-primary font-extrabold text-sm text-right flex flex-row gap-1.5 items-baseline justify-end">
+              <span v-if="detail.strikethrough" class="pricing-strikethrough line-through text-text-muted text-xs font-medium opacity-70">
+                {{ detail.strikethrough }}
+              </span>
+              <span class="text-primary">{{ detail.value }}</span>
+            </div>
+          </div>
+          <div v-if="idx < plan.pricingDetails.length - 1" class="pricing-divider h-px bg-[rgba(0,201,183,0.2)] my-1.5"></div>
         </template>
       </div>
-      <div v-if="plan.period" class="pricing-period text-sm text-text-muted font-medium">
-        {{ plan.period }}
+
+      <!-- Features - Tighter spacing -->
+      <ul class="pricing-features list-none mb-4 flex-grow space-y-1">
+        <li 
+          v-for="feature in plan.features" 
+          :key="feature"
+          class="pricing-feature-item flex items-start gap-2 text-text-secondary text-sm leading-[1.5]"
+        >
+          {{ feature }}
+        </li>
+      </ul>
+
+      <!-- Notes - More compact -->
+      <div v-if="plan.note" class="pricing-note text-[0.7rem] text-text-muted mb-3 text-center leading-[1.4]">
+        {{ plan.note }}
       </div>
-    </div>
-    <div v-if="plan.pricingDetails" class="pricing-details my-4 bg-[rgba(0,201,183,0.08)] border border-[rgba(0,201,183,0.15)] rounded-lg p-4 grid grid-cols-[1fr_auto] gap-1 items-center">
-      <template v-for="(detail, idx) in plan.pricingDetails" :key="idx">
-        <div class="pricing-label text-text-secondary font-semibold text-sm whitespace-nowrap">
-          {{ detail.label }}
-        </div>
-        <div class="pricing-value text-text-primary font-extrabold text-base text-right flex flex-row gap-2 items-baseline justify-end whitespace-nowrap">
-          <span v-if="detail.strikethrough" class="pricing-strikethrough line-through text-text-muted mr-1 text-sm font-medium opacity-80">
-            {{ detail.strikethrough }}
-          </span>
-          {{ detail.value }}
-        </div>
-        <div v-if="idx < plan.pricingDetails.length - 1" class="pricing-divider col-span-2 h-px bg-[rgba(0,201,183,0.15)] my-1"></div>
-      </template>
-    </div>
-    <ul class="pricing-features list-none my-4 flex-grow">
-      <li 
-        v-for="feature in plan.features" 
-        :key="feature"
-        class="pricing-feature-item py-1 flex items-start gap-3 text-text-secondary text-sm leading-[1.4] mb-0.5"
+
+      <!-- CTA Button - More prominent -->
+      <a 
+        :href="plan.ctaHref" 
+        :class="[
+          'cta-button w-full text-center mt-auto inline-block px-5 py-2.5 no-underline font-bold text-sm font-body rounded-lg transition-all duration-300 relative overflow-hidden',
+          plan.isFeatured 
+            ? 'bg-gradient-accent text-white shadow-md shadow-glow hover:shadow-lg hover:shadow-glow-strong hover:-translate-y-0.5' 
+            : 'bg-white text-primary shadow-sm border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5'
+        ]"
       >
-        {{ feature }}
-      </li>
-    </ul>
-    <div v-if="plan.note" class="pricing-note text-xs text-text-muted mt-2 mb-4 text-center italic leading-[1.4]">
-      {{ plan.note }}
+        {{ plan.ctaText }}
+      </a>
     </div>
-    <div v-if="plan.taxNote" class="pricing-tax-note text-[0.7rem] text-text-muted -mt-1 mb-4 text-center opacity-80">
-      {{ plan.taxNote }}
-    </div>
-    <a 
-      :href="plan.ctaHref" 
-      :class="[
-        'cta-button w-full text-center mt-auto inline-block px-11 py-[1.125rem] no-underline font-semibold text-lg font-body rounded-full transition-all duration-300 relative overflow-hidden border-2 border-transparent hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-glow-strong',
-        plan.isFeatured 
-          ? 'bg-gradient-accent text-white shadow-md shadow-glow' 
-          : 'bg-white text-primary shadow-md border-2 border-[rgba(0,201,183,0.2)]'
-      ]"
-    >
-      {{ plan.ctaText }}
-    </a>
   </div>
 </template>
 
@@ -115,42 +133,108 @@ onMounted(() => {
   transform: translateY(0) scale(1) !important;
 }
 
+/* Featured card - elevated above others */
 .pricing-card.featured {
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: 2px solid var(--color-primary) !important;
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.98) !important;
+  transform: scale(1.08) translateY(-12px);
+  z-index: 10;
+  position: relative;
   box-shadow: 
-    0 20px 50px -10px rgba(0, 0, 0, 0.15),
-    0 0 40px rgba(0, 201, 183, 0.2) !important;
-  z-index: 2;
+    0 20px 60px -12px rgba(0, 143, 189, 0.4),
+    0 0 50px rgba(0, 201, 183, 0.3),
+    0 8px 25px -5px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Non-featured cards - lower z-index */
+.pricing-card:not(.featured) {
+  z-index: 1;
+  position: relative;
 }
 
 .pricing-card.featured:hover {
-  transform: scale(1.05) translateY(-10px);
-}
-
-.pricing-card:not(.featured):hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.95);
+  transform: scale(1.08) translateY(-16px);
   box-shadow: 
-    0 20px 40px -10px rgba(0, 0, 0, 0.1),
-    0 0 30px rgba(0, 201, 183, 0.15);
-  border-color: rgba(0, 201, 183, 0.3);
+    0 25px 70px -10px rgba(0, 143, 189, 0.5),
+    0 0 60px rgba(0, 201, 183, 0.4),
+    0 12px 35px -8px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Non-featured cards - subtle hover */
+.pricing-card:not(.featured):hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 
+    0 8px 30px -5px rgba(0, 0, 0, 0.12),
+    0 0 20px rgba(0, 201, 183, 0.1);
+  border-color: rgba(0, 201, 183, 0.4);
+  z-index: 2;
+}
+
+/* Feature checkmark - smaller and cleaner */
 .pricing-feature-item::before {
   content: '';
   flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  margin-top: 0.2em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300C9B7' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  width: 16px;
+  height: 16px;
+  margin-top: 0.15em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300C9B7' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
+/* Popular badge styling - top right corner */
 .popular-badge {
-  border-bottom-left-radius: var(--radius-md);
+  box-shadow: -2px 2px 10px rgba(0, 201, 183, 0.3);
+  letter-spacing: 0.05em;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+/* Constrain card width for slimmer appearance */
+.pricing-card {
+  max-width: 100%;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .pricing-card {
+    padding: 1rem !important;
+  }
+  
+  .pricing-card.featured {
+    transform: scale(1) translateY(0);
+    box-shadow: 
+      0 10px 30px -5px rgba(0, 143, 189, 0.25),
+      0 0 30px rgba(0, 201, 183, 0.2) !important;
+  }
+  
+  .pricing-card.featured:hover {
+    transform: translateY(-4px);
+  }
+  
+  .pricing-card:not(.featured):hover {
+    transform: translateY(-4px);
+  }
+  
+  .pricing-price {
+    font-size: 2rem !important;
+  }
+  
+  .popular-badge {
+    font-size: 0.65rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-card {
+    padding: 0.875rem !important;
+  }
+  
+  .pricing-price {
+    font-size: 1.75rem !important;
+  }
 }
 </style>
 

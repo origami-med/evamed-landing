@@ -1,17 +1,17 @@
 <template>
-  <section class="contact bg-bg-primary py-32 px-8 relative" id="contact">
+  <section class="contact bg-bg-primary py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative" id="contact">
     <div class="container max-w-[1400px] mx-auto">
-      <h2 class="section-title text-center font-display text-[clamp(2.25rem,5.5vw,4rem)] font-bold mb-8 text-text-primary leading-[1.2] tracking-[-0.02em] relative inline-block w-full">
+      <h2 class="section-title text-center font-display text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 md:mb-8 text-text-primary leading-[1.2] tracking-[-0.02em] relative inline-block w-full">
         {{ config.contact.title }}
         <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-accent rounded-sm opacity-60"></span>
       </h2>
-      <div class="contact-container max-w-[800px] mx-auto">
+      <div class="contact-container max-w-[600px] mx-auto">
         <form 
-          class="contact-form bg-card-bg border-2 border-card-border rounded-3xl p-24 shadow-md relative overflow-hidden group" 
+          class="contact-form bg-white/90 backdrop-blur-xl border border-card-border rounded-lg p-5 md:p-6 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] relative overflow-hidden group" 
           @submit.prevent="handleSubmit"
         >
           <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-accent origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
-          <div class="form-group mb-8">
+          <div class="form-group mb-5">
             <label for="name" class="block mb-2 text-text-primary font-medium text-sm">
               {{ config.contact.form.name.label }}
             </label>
@@ -24,13 +24,13 @@
               @blur="validateField('name')"
               @input="clearError('name')"
               :class="[
-                'w-full px-5 py-4 border-2 rounded-lg font-body text-base text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_4px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
+                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
                 errors.name ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
               ]"
             >
             <p v-if="errors.name" class="mt-2 text-sm text-red-500">{{ errors.name }}</p>
           </div>
-          <div class="form-group mb-8">
+          <div class="form-group mb-5">
             <label for="mobile" class="block mb-2 text-text-primary font-medium text-sm">
               {{ config.contact.form.mobile.label }}
             </label>
@@ -44,13 +44,13 @@
               @input="handleMobileInput"
               maxlength="10"
               :class="[
-                'w-full px-5 py-4 border-2 rounded-lg font-body text-base text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_4px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
+                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
                 errors.mobile ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
               ]"
             >
             <p v-if="errors.mobile" class="mt-2 text-sm text-red-500">{{ errors.mobile }}</p>
           </div>
-          <div class="form-group mb-8">
+          <div class="form-group mb-5">
             <label for="email" class="block mb-2 text-text-primary font-medium text-sm">
               {{ config.contact.form.email.label }}
             </label>
@@ -63,7 +63,7 @@
               @blur="validateField('email')"
               @input="clearError('email')"
               :class="[
-                'w-full px-5 py-4 border-2 rounded-lg font-body text-base text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_4px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
+                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
                 errors.email ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
               ]"
             >
@@ -73,7 +73,7 @@
             type="submit" 
             :disabled="isSubmitting"
             :class="[
-              'form-submit w-full py-4 bg-gradient-accent text-white border-0 rounded-lg text-lg font-semibold cursor-pointer transition-all duration-300 shadow-md hover:-translate-y-0.5 hover:shadow-glow',
+              'form-submit w-full py-3 bg-gradient-accent text-white border-0 rounded-lg text-base font-bold cursor-pointer transition-all duration-300 shadow-md hover:-translate-y-0.5 hover:shadow-glow',
               isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
             ]"
           >

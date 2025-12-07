@@ -1,25 +1,25 @@
 <template>
   <div 
-    class="addon-card bg-card-bg border-[1.5px] border-card-border rounded-3xl p-16 transition-all duration-500 shadow-sm relative overflow-hidden text-center group hover:-translate-y-3 hover:scale-[1.02] hover:border-primary hover:shadow-xl hover:shadow-glow"
+    class="addon-card bg-white/90 backdrop-blur-xl border border-card-border rounded-lg p-5 transition-all duration-500 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] relative overflow-hidden text-center group hover:-translate-y-2 hover:shadow-lg hover:border-primary/50"
     ref="cardRef"
   >
     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-accent origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
-    <h3 class="font-display text-[1.75rem] font-bold mb-4 text-text-primary">
+    <h3 class="font-display text-lg font-extrabold mb-3 text-text-primary">
       {{ addon.title }}
     </h3>
-    <p class="text-text-secondary mb-8 leading-[1.7]">
+    <p class="text-text-secondary text-sm mb-4 leading-[1.5]">
       {{ addon.description }}
     </p>
     <p class="pricing-note text-xs text-text-muted mb-2 italic">
       {{ addon.period }}
     </p>
-    <div class="addon-price text-2xl font-extrabold text-primary font-display">
-      <span v-if="addon.strikethrough" class="pricing-strikethrough line-through text-text-muted mr-1 text-sm font-medium opacity-80">
+    <div class="addon-price text-[2.25rem] font-extrabold text-primary font-body mb-2">
+      <span v-if="addon.strikethrough" class="pricing-strikethrough line-through text-text-muted mr-1 text-sm font-medium opacity-70">
         {{ addon.strikethrough }}
       </span>
-      {{ addon.price }}<span class="text-base font-medium">{{ addon.pricePeriod }}</span>
+      {{ addon.price }}<span class="text-sm font-semibold">{{ addon.pricePeriod }}</span>
     </div>
-    <p class="pricing-note text-xs text-text-muted mt-4 italic">
+    <p class="pricing-note text-[0.65rem] text-text-muted mt-2 italic opacity-75">
       {{ addon.taxNote }}
     </p>
   </div>

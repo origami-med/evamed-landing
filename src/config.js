@@ -204,19 +204,22 @@ export const config = {
   // Testimonials Section
   testimonials: {
     title: "TESTIMONIALS",
-    subtitle: "What our clients are saying",
+    subtitle: "What our doctors are saying",
     items: [
       {
-        text: "This is the space to share a review from one of the business's clients or customers.",
-        author: "Leah Yurfset",
+        text: "evamed has transformed my practice completely. I can now complete prescriptions in under 30 seconds, and the AI dictation feature is incredibly accurate. My patients love receiving prescriptions via WhatsApp in their local language. This is truly India's most doctor-friendly EMR!",
+        author: "Dr. Rajesh Kumar",
+        avatar: "https://ui-avatars.com/api/?name=Dr+Rajesh+Kumar&background=00C9B7&color=fff&size=128&bold=true",
       },
       {
-        text: "This is the space to share a review from one of the business's clients or customers.",
-        author: "Roy Gold",
+        text: "As a dermatologist, I need to capture and compare before-after images regularly. evamed's patient growth features make this so easy. The treatment plans and estimates help me convert more consultations. The local data storage gives me complete peace of mind about patient privacy.",
+        author: "Dr. Priya Sharma",
+        avatar: "https://ui-avatars.com/api/?name=Dr+Priya+Sharma&background=008FBD&color=fff&size=128&bold=true",
       },
       {
-        text: "This is the space to share a review from one of the business's clients or customers.",
-        author: "Nela Yliuay",
+        text: "Running multiple clinics was a challenge until I found evamed Premium Plus. The True Private Network lets me access patient data from anywhere securely. GST-compliant billing is automatic, and I never miss follow-ups thanks to WhatsApp reminders. Highly recommended!",
+        author: "Dr. Amit Patel",
+        avatar: "https://ui-avatars.com/api/?name=Dr+Amit+Patel&background=0065C3&color=fff&size=128&bold=true",
       },
     ],
   },

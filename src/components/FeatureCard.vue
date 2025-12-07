@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="feature-card bg-white/60 backdrop-blur-xl border border-white/80 rounded-2xl p-6 transition-all duration-500 relative overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] z-10 group"
+    class="feature-card bg-white/90 backdrop-blur-xl border border-card-border rounded-lg p-5 transition-all duration-500 relative overflow-hidden shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] z-10 group"
     :style="{ counterIncrement: 'feature-counter' }"
     ref="cardRef"
   >
@@ -10,7 +10,7 @@
       {{ featureNumber }}
     </div>
     <div 
-      class="feature-card-content grid gap-6 items-center relative z-10"
+      class="feature-card-content grid gap-5 items-center relative z-10"
       :class="[
         isEven ? 'grid-cols-[1.1fr_1fr] direction-rtl' : 'grid-cols-[1fr_1.1fr]'
       ]"
@@ -19,14 +19,14 @@
         <span class="feature-tag inline-block font-semibold text-xs uppercase tracking-wider text-primary bg-[rgba(0,201,183,0.1)] px-3 py-1.5 rounded-lg mb-2 border border-[rgba(0,201,183,0.2)]">
           {{ feature.tag }}
         </span>
-        <h2 class="font-display text-[clamp(1.5rem,3vw,2rem)] font-extrabold mb-4 text-text-primary leading-[1.2]">
+        <h2 class="font-display text-lg md:text-xl font-extrabold mb-3 text-text-primary leading-[1.2]">
           {{ feature.title }}
         </h2>
         <ul class="list-none mt-1">
           <li 
             v-for="bullet in feature.bullets" 
             :key="bullet"
-            class="feature-list-item py-2 pl-8 relative text-text-secondary text-sm leading-[1.5] transition-transform duration-300 hover:translate-x-2"
+            class="feature-list-item py-1.5 pl-8 relative text-text-secondary text-sm leading-[1.5] transition-transform duration-300 hover:translate-x-2"
           >
             {{ bullet }}
           </li>
