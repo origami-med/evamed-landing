@@ -24,3 +24,4 @@ import { config } from '../config.js';
 import PricingCard from './PricingCard.vue';
 </script>
 
+
