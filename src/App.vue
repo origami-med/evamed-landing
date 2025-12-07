@@ -1,23 +1,25 @@
 <template>
   <div id="app">
     <div class="bg-pattern"></div>
-    <Header />
+    <Header v-if="config.navigation.visible" />
     <main>
-      <Hero />
-      <Features />
-      <Pricing />
-      <Addons />
-      <Testimonials />
-      <ContactForm />
+      <Hero v-if="config.hero.visible" />
+      <Features v-if="config.features.visible" />
+      <Pricing v-if="config.pricing.visible" />
+      <Addons v-if="config.addons.visible" />
+      <Testimonials v-if="config.testimonials.visible" />
+      <ContactForm v-if="config.contact.visible" />
     </main>
-    <Footer @open-modal="openModal" />
+    <Footer v-if="config.footer.visible" @open-modal="openModal" />
     <Modal 
+      v-if="config.legal.visible"
       modal-type="privacy" 
       :is-open="modals.privacy" 
       :legal="config.legal.privacyPolicy"
       @close="closeModal('privacy')"
     />
     <Modal 
+      v-if="config.legal.visible"
       modal-type="terms" 
       :is-open="modals.terms" 
       :legal="config.legal.termsAndConditions"

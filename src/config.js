@@ -3,6 +3,7 @@
 export const config = {
   // Meta Information & SEO
   meta: {
+    visible: true,
     title: "evamed - India's Most Doctor Friendly EMR",
     description: "India's most doctor-friendly EMR system. Complete prescriptions in 30 seconds, manage billing, follow-ups, and patient data with complete local control. Forever Free plan available.",
     keywords: "EMR, Electronic Medical Records, Doctor Software, Medical Practice Management, India EMR, Healthcare Software, Patient Management",
@@ -14,6 +15,7 @@ export const config = {
 
   // Site Branding
   site: {
+    visible: true,
     brandName: "evamed",
     companyName: "Innovea Logitech",
     tagline: "India's most Doctor Friendly EMR",
@@ -26,6 +28,7 @@ export const config = {
 
   // Navigation
   navigation: {
+    visible: true,
     header: [
       { text: "Features", href: "#features" },
       { text: "Pricing", href: "#pricing" },
@@ -46,6 +49,7 @@ export const config = {
 
   // Hero Section
   hero: {
+    visible: true,
     title: "India's most",
     titleHighlight: "Doctor Friendly EMR",
     subtitle: "Only our EMR combines an industry-first True Private Network for total local data control, a Forever Free plan to explore without limits, and more features than any competing platform.",
@@ -57,6 +61,7 @@ export const config = {
 
   // Features Section
   features: {
+    visible: true,
     title: "Why You'll Love It",
     subtitle: "Consultations | Procedures | Billing | Reminders | Research | Pharmacy | WhatsApp",
     items: [
@@ -110,6 +115,7 @@ export const config = {
 
   // Pricing Section
   pricing: {
+    visible: true,
     title: "Manage Patients Seamlessly",
     titleLine2: "Stay Legally Compliant",
     plans: [
@@ -176,6 +182,7 @@ export const config = {
 
   // Add-ons Section
   addons: {
+    visible: true,
     title: "Unlock the full potential of",
     titleHighlight: "evamed",
     titleSuffix: "with our Add-ons",
@@ -203,6 +210,7 @@ export const config = {
 
   // Testimonials Section
   testimonials: {
+    visible: true,
     title: "TESTIMONIALS",
     subtitle: "What our doctors are saying",
     items: [
@@ -226,6 +234,7 @@ export const config = {
 
   // Contact Form
   contact: {
+    visible: true,
     title: "Contact us",
     form: {
       name: {
@@ -267,6 +276,7 @@ export const config = {
 
   // Footer
   footer: {
+    visible: true,
     description: "India's most Doctor Friendly EMR",
     copyright: "© 2025 by Innovea Logitech",
     social: [
@@ -306,6 +316,7 @@ export const config = {
 
   // Legal Content
   legal: {
+    visible: true,
     privacyPolicy: {
       lastUpdated: "January 2025",
       content: [
