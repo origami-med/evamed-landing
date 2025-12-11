@@ -43,6 +43,7 @@ export default {
         'gradient-hero': 'linear-gradient(135deg, #E0F7FA 0%, #E1F5FE 50%, #E3F2FD 100%)',
         'gradient-accent': 'linear-gradient(135deg, #00C9B7 0%, #0095C8 50%, #0065C3 100%)',
         'gradient-warm': 'linear-gradient(135deg, #FF8C42 0%, #FF6B6B 100%)',
+        'gradient-orange': 'linear-gradient(135deg, #FF8C42 0%, #FF6B35 50%, #FF6B6B 100%)',
         'logo-gradient': 'linear-gradient(180deg, #00C9B7 0%, #0065C3 100%)',
       },
       boxShadow: {
