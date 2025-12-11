@@ -263,9 +263,12 @@ export const config = {
       // Form submission configuration
       submission: {
         // Set to true if you want to use an API endpoint
-        useApi: false,
+        useApi: true,
         // API endpoint URL (if useApi is true)
-        apiEndpoint: null,
+        // Google Apps Script Web App URL
+        apiEndpoint: "https://script.google.com/macros/s/AKfycbz_EYohPtrLzyFuAclo0U4VkFe49cdVZ1aXVM1dHzrXJZLNv6atbUOtxZSsoplfpTwo/exec",
+        // Submission type: 'formspree' or 'google-sheets'
+        submissionType: 'google-sheets',
         // Success message
         successMessage: "Thank you for contacting us! We will get back to you soon.",
         // Error message

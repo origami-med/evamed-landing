@@ -82,12 +82,22 @@
         </form>
       </div>
     </div>
+    
+    <!-- Snackbar Notification -->
+    <Snackbar
+      v-if="snackbar.visible"
+      :message="snackbar.message"
+      :type="snackbar.type"
+      :duration="snackbar.duration"
+      @close="snackbar.visible = false"
+    />
   </section>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
 import { config } from '../config.js';
+import Snackbar from './Snackbar.vue';
 
 const formData = ref({
   name: '',
@@ -102,6 +112,68 @@ const errors = reactive({
 });
 
 const isSubmitting = ref(false);
+
+// Snackbar state
+const snackbar = reactive({
+  visible: false,
+  message: '',
+  type: 'info', // 'success', 'error', 'info'
+  duration: 5000,
+});
+
+// Show snackbar notification
+const showSnackbar = (message, type = 'info', duration = 5000) => {
+  snackbar.message = message;
+  snackbar.type = type;
+  snackbar.duration = duration;
+  snackbar.visible = true;
+};
+
+// Note: Google Apps Script doesn't support CORS for GET requests
+// We rely on localStorage for client-side duplicate prevention
+// and the doPost function in Google Apps Script for server-side duplicate checking
+
+// Check for duplicate submissions using localStorage
+const checkDuplicateSubmission = (email, mobile) => {
+  const storageKey = 'evamed_form_submissions';
+  const now = Date.now();
+  const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+  
+  try {
+    const submissions = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    
+    // Filter out old submissions (older than 1 hour)
+    const recentSubmissions = submissions.filter(sub => now - sub.timestamp < oneHour);
+    
+    // Check for duplicate email or mobile
+    const isDuplicate = recentSubmissions.some(sub => 
+      sub.email.toLowerCase() === email.toLowerCase() || 
+      sub.mobile === mobile
+    );
+    
+    if (isDuplicate) {
+      return {
+        isDuplicate: true,
+        message: 'You have already submitted a form with this email or phone number recently. Please wait before submitting again.'
+      };
+    }
+    
+    // Save this submission
+    recentSubmissions.push({
+      email: email.toLowerCase(),
+      mobile: mobile,
+      timestamp: now
+    });
+    
+    localStorage.setItem(storageKey, JSON.stringify(recentSubmissions));
+    
+    return { isDuplicate: false };
+  } catch (error) {
+    console.error('Error checking duplicate:', error);
+    // If localStorage fails, allow submission but log error
+    return { isDuplicate: false };
+  }
+};
 
 // Validation functions
 const validateName = (name) => {
@@ -203,29 +275,169 @@ const handleSubmit = async () => {
     return;
   }
 
+  // Check for duplicate submission (frontend check)
+  const duplicateCheck = checkDuplicateSubmission(formData.value.email, formData.value.mobile);
+  if (duplicateCheck.isDuplicate) {
+    showSnackbar(duplicateCheck.message, 'error', 6000);
+    return;
+  }
+
   isSubmitting.value = true;
   
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 500));
-    
-    console.log('Form submitted:', formData.value);
-    alert('Thank you for contacting us! We will get back to you soon.');
-    
-    // Reset form
-    formData.value = {
-      name: '',
-      mobile: '',
-      email: '',
-    };
-    
-    // Clear errors
-    errors.name = '';
-    errors.email = '';
-    errors.mobile = '';
+    // Check if API submission is enabled
+    if (config.contact.form.submission.useApi && config.contact.form.submission.apiEndpoint) {
+      const submissionType = config.contact.form.submission.submissionType || 'formspree';
+      
+      if (submissionType === 'google-sheets') {
+        // Submit to Google Apps Script (Google Sheets)
+        const formDataToSend = {
+          name: formData.value.name,
+          mobile: formData.value.mobile,
+          email: formData.value.email,
+          timestamp: new Date().toISOString(),
+        };
+
+        try {
+          // Try with CORS first to detect errors
+          const response = await fetch(config.contact.form.submission.apiEndpoint, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formDataToSend),
+          });
+
+          // Check if response is ok
+          if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.message || `Server error: ${response.status} ${response.statusText}`);
+          }
+
+          const data = await response.json();
+          
+          // Check if the response indicates success
+          if (data.success === false || data.error) {
+            const errorMessage = data.message || data.error || config.contact.form.submission.errorMessage;
+            showSnackbar(errorMessage, 'error', 6000);
+            isSubmitting.value = false;
+            return;
+          }
+
+          // Success
+          showSnackbar(config.contact.form.submission.successMessage, 'success');
+          
+          // Reset form
+          formData.value = {
+            name: '',
+            mobile: '',
+            email: '',
+          };
+          
+          // Clear errors
+          errors.name = '';
+          errors.email = '';
+          errors.mobile = '';
+        } catch (fetchError) {
+          // If CORS fails, try with no-cors as fallback
+          if (fetchError.message.includes('CORS') || fetchError.message.includes('Failed to fetch')) {
+            try {
+              // Fallback to no-cors mode (can't read response)
+              await fetch(config.contact.form.submission.apiEndpoint, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formDataToSend),
+              });
+              
+              // With no-cors, we can't verify success, so show a neutral message
+              showSnackbar('Your submission has been sent. Please note that we cannot verify the response.', 'info', 6000);
+              
+              // Reset form
+              formData.value = {
+                name: '',
+                mobile: '',
+                email: '',
+              };
+              
+              // Clear errors
+              errors.name = '';
+              errors.email = '';
+              errors.mobile = '';
+            } catch (noCorsError) {
+              // Even no-cors failed
+              showSnackbar(config.contact.form.submission.errorMessage, 'error', 6000);
+            }
+          } else {
+            // Other error (like 401, 500, etc.)
+            const errorMessage = fetchError.message || config.contact.form.submission.errorMessage;
+            showSnackbar(errorMessage, 'error', 6000);
+          }
+        }
+      } else {
+        // Submit to Formspree
+        const response = await fetch(config.contact.form.submission.apiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.value.name,
+            mobile: formData.value.mobile,
+            email: formData.value.email,
+            _subject: `New Contact Form Submission from ${formData.value.name}`,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Form submission failed');
+        }
+
+        const data = await response.json();
+        
+        // Formspree returns { ok: true } on success
+        if (data.ok || response.status === 200) {
+          showSnackbar(config.contact.form.submission.successMessage, 'success');
+          
+          // Reset form
+          formData.value = {
+            name: '',
+            mobile: '',
+            email: '',
+          };
+          
+          // Clear errors
+          errors.name = '';
+          errors.email = '';
+          errors.mobile = '';
+        } else {
+          throw new Error('Form submission failed');
+        }
+      }
+    } else {
+      // Fallback: just log and show success message (for testing)
+      console.log('Form submitted:', formData.value);
+      showSnackbar(config.contact.form.submission.successMessage, 'success');
+      
+      // Reset form
+      formData.value = {
+        name: '',
+        mobile: '',
+        email: '',
+      };
+      
+      // Clear errors
+      errors.name = '';
+      errors.email = '';
+      errors.mobile = '';
+    }
   } catch (error) {
     console.error('Error submitting form:', error);
-    alert('There was an error submitting your form. Please try again.');
+    showSnackbar(config.contact.form.submission.errorMessage, 'error', 6000);
   } finally {
     isSubmitting.value = false;
   }
