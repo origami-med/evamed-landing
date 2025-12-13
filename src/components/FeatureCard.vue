@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="feature-card bg-white/90 backdrop-blur-xl border border-card-border rounded-md p-6 transition-all duration-500 relative overflow-hidden shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] z-10 group h-[300px]"
+    class="feature-card bg-white/90 backdrop-blur-xl border border-card-border rounded-md p-6 transition-all duration-500 relative overflow-hidden shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] z-10 group h-auto md:h-[300px]"
     :style="{ counterIncrement: 'feature-counter' }"
     ref="cardRef"
   >
@@ -30,7 +30,7 @@
         </ul>
       </div>
       <div 
-        class="video-container rounded-md overflow-hidden relative aspect-video bg-black shadow-[0_10px_20px_-5px_rgba(0,0,0,0.2)] border-2 border-white/50 w-full pl-5"
+        class="video-container rounded-md overflow-hidden relative aspect-video bg-black shadow-[0_10px_20px_-5px_rgba(0,0,0,0.2)] border-2 border-white/50 w-full md:pl-5"
       >
         <iframe 
           :src="feature.videoUrl" 
@@ -124,9 +124,15 @@ onMounted(() => {
     grid-row: auto !important;
     transform: none !important;
     margin-top: 1rem;
+    padding-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .feature-list-item {
     padding-left: 1.5rem;
+  }
+  .feature-card-content > div:first-child {
+    padding-right: 0 !important;
   }
 }
 </style>
