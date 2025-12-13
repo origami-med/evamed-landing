@@ -7,10 +7,9 @@
       </h2>
       <div class="contact-container max-w-[600px] mx-auto">
         <form 
-          class="contact-form bg-white/90 backdrop-blur-xl border border-card-border rounded-lg p-5 md:p-6 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] relative overflow-hidden group" 
+          class="contact-form bg-white/90 backdrop-blur-xl border-2 border-primary rounded-md p-5 md:p-6 shadow-[0_8px_30px_-5px_rgba(0,143,189,0.25)] relative overflow-hidden" 
           @submit.prevent="handleSubmit"
         >
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-accent origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
           <div class="form-group mb-5">
             <label for="name" class="block mb-2 text-text-primary font-medium text-sm">
               {{ config.contact.form.name.label }}
@@ -24,7 +23,7 @@
               @blur="validateField('name')"
               @input="clearError('name')"
               :class="[
-                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
+                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
                 errors.name ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
               ]"
             >
@@ -44,7 +43,7 @@
               @input="handleMobileInput"
               maxlength="10"
               :class="[
-                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
+                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
                 errors.mobile ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
               ]"
             >
@@ -63,7 +62,7 @@
               @blur="validateField('email')"
               @input="clearError('email')"
               :class="[
-                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white hover:border-[rgba(0,201,183,0.3)]',
+                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
                 errors.email ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
               ]"
             >
@@ -73,7 +72,7 @@
             type="submit" 
             :disabled="isSubmitting"
             :class="[
-              'form-submit w-full py-3 bg-gradient-accent text-white border-0 rounded-lg text-base font-bold cursor-pointer transition-all duration-300 shadow-md hover:-translate-y-0.5 hover:shadow-glow',
+              'form-submit w-full py-3 bg-gradient-accent text-white border-0 rounded-lg text-base font-bold cursor-pointer transition-all duration-300 shadow-md mt-4',
               isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
             ]"
           >
@@ -443,4 +442,10 @@ const handleSubmit = async () => {
   }
 };
 </script>
+
+<style scoped>
+.contact-form:hover {
+  transform: none !important;
+}
+</style>
 

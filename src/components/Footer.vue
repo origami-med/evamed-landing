@@ -1,12 +1,11 @@
 <template>
-  <footer class="bg-bg-secondary border-t border-card-border py-24 px-8">
-    <div class="footer-content max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
+  <footer class="bg-bg-secondary border-t border-card-border py-12 px-8">
+    <div class="footer-content max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       <div class="footer-brand flex flex-col gap-4">
         <a href="#" class="footer-logo flex items-center gap-4 no-underline text-text-primary font-display text-2xl font-bold mb-4">
-          <div class="logo-container w-12 h-12 rounded-2xl bg-logo-gradient flex items-center justify-center">
-            <img :src="config.site.logoUrl" :alt="`${config.site.brandName} Logo`" class="w-10 h-10 object-contain">
+          <div class="logo-container w-22 h-22 rounded-md bg-logo-gradient flex items-center justify-center">
+            <img :src="config.site.logoUrl" :alt="`${config.site.brandName} Logo`" class="w-20 h-20 object-contain">
           </div>
-          <span class="logo-text font-bold">{{ config.site.brandName }}</span>
         </a>
         <p class="text-text-secondary text-sm">{{ config.footer.description }}</p>
       </div>
@@ -58,7 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom text-center pt-16 border-t border-card-border text-text-muted text-sm">
+    <div class="footer-bottom text-center pt-8 border-t border-card-border text-text-muted text-sm">
       <p>{{ config.footer.copyright }}</p>
     </div>
   </footer>

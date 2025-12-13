@@ -1,9 +1,8 @@
 <template>
   <div 
-    class="addon-card bg-white/90 backdrop-blur-xl border border-card-border rounded-lg p-5 transition-all duration-500 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] relative overflow-hidden text-center group hover:-translate-y-2 hover:shadow-lg hover:border-primary/50"
+    class="addon-card bg-white/90 backdrop-blur-xl border border-card-border rounded-lg p-5 transition-all duration-500 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] relative overflow-hidden text-center group"
     ref="cardRef"
   >
-    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-accent origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
     <h3 class="font-display text-lg font-extrabold mb-3 text-text-primary">
       {{ addon.title }}
     </h3>
@@ -64,6 +63,15 @@ onMounted(() => {
 .addon-card.visible {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
+}
+
+/* Hover glow effect - only on right and bottom edges - matching FeatureCard */
+.addon-card:hover {
+  box-shadow: 
+    0 4px 20px -2px rgba(0, 0, 0, 0.08),
+    20px 20px 60px -12px rgba(0, 143, 189, 0.4),
+    20px 20px 50px -10px rgba(0, 201, 183, 0.3),
+    0 25px 50px -15px rgba(0, 143, 189, 0.3) !important;
 }
 </style>
 

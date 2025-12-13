@@ -38,7 +38,7 @@
           :target="btn.target || undefined"
           :rel="btn.target === '_blank' ? 'noopener noreferrer' : undefined"
           :class="[
-            'cta-button inline-block w-[220px] py-[1.125rem] no-underline font-semibold text-lg font-body rounded-full transition-all duration-300 relative overflow-hidden border-2 border-transparent hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg text-center',
+            'cta-button inline-block w-[220px] py-[0.75rem] no-underline font-semibold text-lg font-body rounded-full transition-all duration-300 relative overflow-hidden border-2 border-transparent hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg text-center',
             btn.isPrimary 
               ? 'bg-gradient-orange text-white shadow-md orange-glow hover:orange-glow-strong' 
               : 'bg-white text-primary shadow-md border-2 border-[rgba(0,201,183,0.2)] hover:shadow-glow-strong'

@@ -1,22 +1,19 @@
 <template>
   <div 
-    class="feature-card bg-white/90 backdrop-blur-xl border border-card-border rounded-lg p-5 transition-all duration-500 relative overflow-hidden shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] z-10 group"
+    class="feature-card bg-white/90 backdrop-blur-xl border border-card-border rounded-md p-6 transition-all duration-500 relative overflow-hidden shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] z-10 group h-[300px]"
     :style="{ counterIncrement: 'feature-counter' }"
     ref="cardRef"
   >
     <div 
-      class="absolute top-0 left-0 font-display text-[5rem] font-extrabold text-primary opacity-[0.03] -z-10 leading-none pointer-events-none transition-all duration-500 group-hover:opacity-[0.08] group-hover:-translate-y-2.5"
+      class="absolute bottom-0 left-0 font-display text-[7rem] font-extrabold text-primary opacity-[0.03] -z-10 leading-none pointer-events-none transition-all duration-500 group-hover:opacity-[0.08] group-hover:-translate-y-2.5"
     >
       {{ featureNumber }}
     </div>
     <div 
-      class="feature-card-content grid gap-5 items-center relative z-10"
-      :class="[
-        isEven ? 'grid-cols-[1.1fr_1fr] direction-rtl' : 'grid-cols-[1fr_1.1fr]'
-      ]"
+      class="feature-card-content grid grid-cols-[3fr_2fr] items-center relative z-10"
     >
-      <div :class="isEven ? 'direction-ltr' : ''">
-        <span class="feature-tag inline-block font-semibold text-xs uppercase tracking-wider text-primary bg-[rgba(0,201,183,0.1)] px-3 py-1.5 rounded-lg mb-2 border border-[rgba(0,201,183,0.2)]">
+      <div class="pr-5">
+        <span class="feature-tag inline-block font-semibold text-xs uppercase tracking-wider text-primary bg-[rgba(0,201,183,0.1)] px-3 py-1.5 rounded-lg mb-3 border border-[rgba(0,201,183,0.2)]">
           {{ feature.tag }}
         </span>
         <h2 class="font-display text-lg md:text-xl font-extrabold mb-3 text-text-primary leading-[1.2]">
@@ -33,10 +30,7 @@
         </ul>
       </div>
       <div 
-        class="video-container rounded-xl overflow-hidden relative aspect-video bg-black shadow-[0_10px_20px_-5px_rgba(0,0,0,0.2)] transition-all duration-500 border-2 border-white/50 w-full group-hover:transform-none group-hover:scale-[1.02] group-hover:shadow-[0_15px_30px_-8px_rgba(0,0,0,0.25)] group-hover:border-white"
-        :class="[
-          isEven ? 'direction-ltr transform-[perspective(1000px)_rotateY(5deg)_translateX(-10px)]' : 'transform-[perspective(1000px)_rotateY(-5deg)_translateX(10px)]'
-        ]"
+        class="video-container rounded-md overflow-hidden relative aspect-video bg-black shadow-[0_10px_20px_-5px_rgba(0,0,0,0.2)] border-2 border-white/50 w-full pl-5"
       >
         <iframe 
           :src="feature.videoUrl" 
@@ -66,7 +60,6 @@ const props = defineProps({
 });
 
 const cardRef = ref(null);
-const isEven = computed(() => props.index % 2 === 1);
 const featureNumber = computed(() => String(props.index + 1).padStart(2, '0'));
 
 
@@ -110,6 +103,15 @@ onMounted(() => {
   background-size: contain;
   background-repeat: no-repeat;
   transition: transform 0.3s ease;
+}
+
+/* Hover glow effect - only on right and bottom edges */
+.feature-card:hover {
+  box-shadow: 
+    0 4px 20px -2px rgba(0, 0, 0, 0.08),
+    20px 20px 60px -12px rgba(0, 143, 189, 0.4),
+    20px 20px 50px -10px rgba(0, 201, 183, 0.3),
+    0 25px 50px -15px rgba(0, 143, 189, 0.3) !important;
 }
 
 @media (max-width: 768px) {

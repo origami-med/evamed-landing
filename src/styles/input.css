@@ -21,8 +21,12 @@
   --color-card-border: #E2E8F0;
 
   /* Font Families */
-  --font-display: 'Manrope', sans-serif;
-  --font-body: 'Mulish', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Figtree', sans-serif;
+  
+  /* Letter Spacing */
+  --letter-spacing-display: -0.03rem; /* -0.48px */
+  --letter-spacing-body: -0.025rem; /* -0.4px */
 
   /* Background Images */
   --gradient-hero: linear-gradient(135deg, #E0F7FA 0%, #E1F5FE 50%, #E3F2FD 100%);
@@ -140,6 +144,7 @@
 
   body {
     font-family: var(--font-body);
+    letter-spacing: var(--letter-spacing-body);
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     line-height: 1.75;
@@ -147,6 +152,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "kern" 1, "liga" 1;
+  }
+  
+  /* Apply letter spacing to display font */
+  .font-display,
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: var(--letter-spacing-display);
   }
 }
 

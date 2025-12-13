@@ -5,7 +5,7 @@
         {{ config.addons.title }} <span class="gradient-text">{{ config.addons.titleHighlight }}</span> {{ config.addons.titleSuffix }}
         <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-accent rounded-sm opacity-60"></span>
       </h2>
-      <div class="addons-grid grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-7 mt-10 md:mt-16 max-w-[1000px] mx-auto">
+      <div class="addons-grid grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-7 lg:gap-8 mt-10 md:mt-16 max-w-[1000px] mx-auto">
         <AddonCard 
           v-for="addon in config.addons.items" 
           :key="addon.title"

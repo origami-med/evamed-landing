@@ -36,8 +36,12 @@ export default {
         },
       },
       fontFamily: {
-        'display': ['Manrope', 'sans-serif'],
-        'body': ['Mulish', 'sans-serif'],
+        'display': ['Inter', 'sans-serif'],
+        'body': ['Figtree', 'sans-serif'],
+      },
+      letterSpacing: {
+        'display': '-0.03rem', // -0.4px
+        'body': '-0.025rem', // -0.4px
       },
       backgroundImage: {
         'gradient-hero': 'linear-gradient(135deg, #E0F7FA 0%, #E1F5FE 50%, #E3F2FD 100%)',

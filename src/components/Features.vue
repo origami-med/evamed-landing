@@ -8,7 +8,7 @@
       <p class="section-subtitle text-center text-[clamp(1rem,2vw,1.2rem)] text-text-secondary max-w-[700px] mx-auto mb-8 md:mb-12 leading-[1.7]">
         {{ config.features.subtitle }}
       </p>
-      <div class="features-grid flex flex-col gap-6 md:gap-8 mt-10 md:mt-12 max-w-[1000px] mx-auto" style="counter-reset: feature-counter;">
+      <div class="features-grid flex flex-col gap-10 md:gap-12 mt-10 md:mt-12 max-w-[1000px] mx-auto" style="counter-reset: feature-counter;">
         <FeatureCard 
           v-for="(feature, index) in config.features.items" 
           :key="index"

@@ -210,7 +210,7 @@ export const config = {
 
   // Testimonials Section
   testimonials: {
-    visible: true,
+    visible: false,
     title: "TESTIMONIALS",
     subtitle: "What our doctors are saying",
     items: [

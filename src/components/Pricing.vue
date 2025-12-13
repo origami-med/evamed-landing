@@ -5,7 +5,7 @@
         {{ config.pricing.title }}<br>{{ config.pricing.titleLine2 }}
         <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-accent rounded-sm opacity-60"></span>
       </h2>
-      <div class="pricing-grid grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 mt-10 md:mt-16 max-w-[850px] mx-auto relative">
+      <div class="pricing-grid grid grid-cols-1 md:grid-cols-3 gap-[24px] mt-10 md:mt-16 max-w-[850px] mx-auto relative">
         <PricingCard 
           v-for="plan in config.pricing.plans" 
           :key="plan.name"

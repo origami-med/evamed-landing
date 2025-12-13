@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="pricing-card bg-white/90 backdrop-blur-xl border rounded-lg transition-all duration-500 relative shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] flex flex-col overflow-hidden group"
+    class="pricing-card bg-white/90 backdrop-blur-xl border rounded-md transition-all duration-500 relative shadow-[0_4px_20px_-2px_rgba(0,0,0,0.08)] flex flex-col overflow-hidden group"
     :class="[
       plan.isFeatured 
         ? 'featured border-2 border-primary shadow-[0_8px_30px_-5px_rgba(0,143,189,0.25)]' 
