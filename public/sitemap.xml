@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage - Best EMR Software -->
+  <url>
+    <loc>https://evamed.in</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_1200%2Ch_630%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png</image:loc>
+      <image:title>evamed - Best EMR Software in the World</image:title>
+      <image:caption>evamed is the world's best and most doctor-friendly EMR software</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/YznmKYLcJJ8/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>evamed Smart Prescriptions - Best EMR Demo</video:title>
+      <video:description>See how evamed, the best EMR software, helps doctors complete prescriptions in 30 seconds</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=YznmKYLcJJ8</video:content_loc>
+    </video:video>
+  </url>
+  
+  <!-- Features Section -->
+  <url>
+    <loc>https://evamed.in#features</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Pricing Section -->
+  <url>
+    <loc>https://evamed.in#pricing</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Contact Section -->
+  <url>
+    <loc>https://evamed.in#contact</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,55 @@
+# robots.txt for evamed - Best EMR Software
+# https://evamed.in
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://evamed.in/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Allow Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow Google Video
+User-agent: Googlebot-Video
+Allow: /
+
+# Allow Google News
+User-agent: Googlebot-News
+Allow: /
+
+# Allow all social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Performance: Disallow unnecessary paths
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Host directive
+Host: https://evamed.in
