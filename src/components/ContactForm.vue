@@ -24,11 +24,6 @@
             </p>
           </div>
 
-          <!-- Error Message -->
-          <div v-if="errorMessage && !showSuccessMessage" class="error-message mb-5 p-4 bg-red-50 border-2 border-red-200 rounded-lg">
-            <p class="text-red-600 text-sm font-medium">{{ errorMessage }}</p>
-          </div>
-
           <!-- Form Fields -->
           <form 
             v-if="!showSuccessMessage"
@@ -102,6 +97,11 @@
             >
               {{ isSubmitting ? 'Submitting...' : config.contact.form.submitText }}
             </button>
+            
+            <!-- Error Message -->
+            <div v-if="errorMessage" class="error-message mt-4 p-4 bg-red-50 border-2 border-red-200 rounded-lg">
+              <p class="text-red-600 text-sm font-medium">{{ errorMessage }}</p>
+            </div>
           </form>
         </div>
       </div>
