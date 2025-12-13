@@ -6,97 +6,112 @@
         <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-accent rounded-sm opacity-60"></span>
       </h2>
       <div class="contact-container max-w-[600px] mx-auto">
-        <form 
+        <div 
           class="contact-form bg-white/90 backdrop-blur-xl border-2 border-primary rounded-md p-5 md:p-6 shadow-[0_8px_30px_-5px_rgba(0,143,189,0.25)] relative overflow-hidden" 
-          @submit.prevent="handleSubmit"
         >
-          <div class="form-group mb-5">
-            <label for="name" class="block mb-2 text-text-primary font-medium text-sm">
-              {{ config.contact.form.name.label }}
-            </label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              :placeholder="config.contact.form.name.placeholder"
-              v-model="formData.name"
-              @blur="validateField('name')"
-              @input="clearError('name')"
-              :class="[
-                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
-                errors.name ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
-              ]"
-            >
-            <p v-if="errors.name" class="mt-2 text-sm text-red-500">{{ errors.name }}</p>
+          <!-- Success Message -->
+          <div v-if="showSuccessMessage" class="success-message text-center py-8">
+            <div class="mb-4">
+              <svg class="w-16 h-16 mx-auto text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-text-primary mb-3">
+              Thank you, Doctor, for sharing your details.
+            </h3>
+            <p class="text-text-secondary text-base">
+              We'll reach out soon to schedule a time that works best for your demo.
+            </p>
           </div>
-          <div class="form-group mb-5">
-            <label for="mobile" class="block mb-2 text-text-primary font-medium text-sm">
-              {{ config.contact.form.mobile.label }}
-            </label>
-            <input 
-              type="tel" 
-              id="mobile" 
-              name="mobile" 
-              :placeholder="config.contact.form.mobile.placeholder"
-              v-model="formData.mobile"
-              @blur="validateField('mobile')"
-              @input="handleMobileInput"
-              maxlength="10"
-              :class="[
-                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
-                errors.mobile ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
-              ]"
-            >
-            <p v-if="errors.mobile" class="mt-2 text-sm text-red-500">{{ errors.mobile }}</p>
+
+          <!-- Error Message -->
+          <div v-if="errorMessage && !showSuccessMessage" class="error-message mb-5 p-4 bg-red-50 border-2 border-red-200 rounded-lg">
+            <p class="text-red-600 text-sm font-medium">{{ errorMessage }}</p>
           </div>
-          <div class="form-group mb-5">
-            <label for="email" class="block mb-2 text-text-primary font-medium text-sm">
-              {{ config.contact.form.email.label }}
-            </label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              :placeholder="config.contact.form.email.placeholder"
-              v-model="formData.email"
-              @blur="validateField('email')"
-              @input="clearError('email')"
-              :class="[
-                'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
-                errors.email ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
-              ]"
-            >
-            <p v-if="errors.email" class="mt-2 text-sm text-red-500">{{ errors.email }}</p>
-          </div>
-          <button 
-            type="submit" 
-            :disabled="isSubmitting"
-            :class="[
-              'form-submit w-full py-3 bg-gradient-accent text-white border-0 rounded-lg text-base font-bold cursor-pointer transition-all duration-300 shadow-md mt-4',
-              isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-            ]"
+
+          <!-- Form Fields -->
+          <form 
+            v-if="!showSuccessMessage"
+            @submit.prevent="handleSubmit"
           >
-            {{ isSubmitting ? 'Submitting...' : config.contact.form.submitText }}
-          </button>
-        </form>
+            <div class="form-group mb-5">
+              <label for="name" class="block mb-2 text-text-primary font-medium text-sm">
+                {{ config.contact.form.name.label }}
+              </label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                :placeholder="config.contact.form.name.placeholder"
+                v-model="formData.name"
+                @blur="validateField('name')"
+                @input="clearError('name')"
+                :class="[
+                  'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
+                  errors.name ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
+                ]"
+              >
+              <p v-if="errors.name" class="mt-2 text-sm text-red-500">{{ errors.name }}</p>
+            </div>
+            <div class="form-group mb-5">
+              <label for="mobile" class="block mb-2 text-text-primary font-medium text-sm">
+                {{ config.contact.form.mobile.label }}
+              </label>
+              <input 
+                type="tel" 
+                id="mobile" 
+                name="mobile" 
+                :placeholder="config.contact.form.mobile.placeholder"
+                v-model="formData.mobile"
+                @blur="validateField('mobile')"
+                @input="handleMobileInput"
+                maxlength="10"
+                :class="[
+                  'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
+                  errors.mobile ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
+                ]"
+              >
+              <p v-if="errors.mobile" class="mt-2 text-sm text-red-500">{{ errors.mobile }}</p>
+            </div>
+            <div class="form-group mb-5">
+              <label for="email" class="block mb-2 text-text-primary font-medium text-sm">
+                {{ config.contact.form.email.label }}
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                :placeholder="config.contact.form.email.placeholder"
+                v-model="formData.email"
+                @blur="validateField('email')"
+                @input="clearError('email')"
+                :class="[
+                  'w-full px-4 py-3 border-2 rounded-lg font-body text-sm text-text-primary bg-bg-primary transition-all duration-300 relative focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,201,183,0.12)] focus:-translate-y-0.5 focus:bg-white',
+                  errors.email ? 'border-red-500 focus:border-red-500' : 'border-card-border focus:border-primary'
+                ]"
+              >
+              <p v-if="errors.email" class="mt-2 text-sm text-red-500">{{ errors.email }}</p>
+            </div>
+            <button 
+              type="submit" 
+              :disabled="isSubmitting"
+              :class="[
+                'form-submit w-full py-3 bg-gradient-accent text-white border-0 rounded-lg text-base font-bold cursor-pointer transition-all duration-300 shadow-md mt-4',
+                isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+              ]"
+            >
+              {{ isSubmitting ? 'Submitting...' : config.contact.form.submitText }}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-    
-    <!-- Snackbar Notification -->
-    <Snackbar
-      v-if="snackbar.visible"
-      :message="snackbar.message"
-      :type="snackbar.type"
-      :duration="snackbar.duration"
-      @close="snackbar.visible = false"
-    />
   </section>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
 import { config } from '../config.js';
-import Snackbar from './Snackbar.vue';
 
 const formData = ref({
   name: '',
@@ -111,22 +126,8 @@ const errors = reactive({
 });
 
 const isSubmitting = ref(false);
-
-// Snackbar state
-const snackbar = reactive({
-  visible: false,
-  message: '',
-  type: 'info', // 'success', 'error', 'info'
-  duration: 5000,
-});
-
-// Show snackbar notification
-const showSnackbar = (message, type = 'info', duration = 5000) => {
-  snackbar.message = message;
-  snackbar.type = type;
-  snackbar.duration = duration;
-  snackbar.visible = true;
-};
+const showSuccessMessage = ref(false);
+const errorMessage = ref('');
 
 // Note: Google Apps Script doesn't support CORS for GET requests
 // We rely on localStorage for client-side duplicate prevention
@@ -277,7 +278,8 @@ const handleSubmit = async () => {
   // Check for duplicate submission (frontend check)
   const duplicateCheck = checkDuplicateSubmission(formData.value.email, formData.value.mobile);
   if (duplicateCheck.isDuplicate) {
-    showSnackbar(duplicateCheck.message, 'error', 6000);
+    errorMessage.value = duplicateCheck.message;
+    showSuccessMessage.value = false;
     return;
   }
 
@@ -318,14 +320,15 @@ const handleSubmit = async () => {
           
           // Check if the response indicates success
           if (data.success === false || data.error) {
-            const errorMessage = data.message || data.error || config.contact.form.submission.errorMessage;
-            showSnackbar(errorMessage, 'error', 6000);
+            errorMessage.value = data.message || data.error || config.contact.form.submission.errorMessage;
+            showSuccessMessage.value = false;
             isSubmitting.value = false;
             return;
           }
 
           // Success
-          showSnackbar(config.contact.form.submission.successMessage, 'success');
+          showSuccessMessage.value = true;
+          errorMessage.value = '';
           
           // Reset form
           formData.value = {
@@ -352,8 +355,9 @@ const handleSubmit = async () => {
                 body: JSON.stringify(formDataToSend),
               });
               
-              // With no-cors, we can't verify success, so show a neutral message
-              showSnackbar('Your submission has been sent. Please note that we cannot verify the response.', 'info', 6000);
+              // With no-cors, we can't verify success, so show success message
+              showSuccessMessage.value = true;
+              errorMessage.value = '';
               
               // Reset form
               formData.value = {
@@ -368,12 +372,13 @@ const handleSubmit = async () => {
               errors.mobile = '';
             } catch (noCorsError) {
               // Even no-cors failed
-              showSnackbar(config.contact.form.submission.errorMessage, 'error', 6000);
+              errorMessage.value = config.contact.form.submission.errorMessage;
+              showSuccessMessage.value = false;
             }
           } else {
             // Other error (like 401, 500, etc.)
-            const errorMessage = fetchError.message || config.contact.form.submission.errorMessage;
-            showSnackbar(errorMessage, 'error', 6000);
+            errorMessage.value = fetchError.message || config.contact.form.submission.errorMessage;
+            showSuccessMessage.value = false;
           }
         }
       } else {
@@ -400,7 +405,8 @@ const handleSubmit = async () => {
         
         // Formspree returns { ok: true } on success
         if (data.ok || response.status === 200) {
-          showSnackbar(config.contact.form.submission.successMessage, 'success');
+          showSuccessMessage.value = true;
+          errorMessage.value = '';
           
           // Reset form
           formData.value = {
@@ -420,7 +426,8 @@ const handleSubmit = async () => {
     } else {
       // Fallback: just log and show success message (for testing)
       console.log('Form submitted:', formData.value);
-      showSnackbar(config.contact.form.submission.successMessage, 'success');
+      showSuccessMessage.value = true;
+      errorMessage.value = '';
       
       // Reset form
       formData.value = {
@@ -436,7 +443,8 @@ const handleSubmit = async () => {
     }
   } catch (error) {
     console.error('Error submitting form:', error);
-    showSnackbar(config.contact.form.submission.errorMessage, 'error', 6000);
+    errorMessage.value = config.contact.form.submission.errorMessage;
+    showSuccessMessage.value = false;
   } finally {
     isSubmitting.value = false;
   }
