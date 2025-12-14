@@ -29,7 +29,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, watch, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { config } from './config.js';
 import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
@@ -41,6 +42,9 @@ import ContactForm from './components/ContactForm.vue';
 import Footer from './components/Footer.vue';
 import Modal from './components/Modal.vue';
 
+const route = useRoute();
+const router = useRouter();
+
 const modals = ref({
   privacy: false,
   terms: false,
@@ -49,18 +53,38 @@ const modals = ref({
 const openModal = (modalId) => {
   if (modalId === 'privacy') {
     modals.value.privacy = true;
+    router.push('/privacy');
   } else if (modalId === 'terms') {
     modals.value.terms = true;
+    router.push('/terms');
   }
 };
 
 const closeModal = (modalId) => {
   if (modalId === 'privacy') {
     modals.value.privacy = false;
+    if (route.path === '/privacy') {
+      router.push('/');
+    }
   } else if (modalId === 'terms') {
     modals.value.terms = false;
+    if (route.path === '/terms') {
+      router.push('/');
+    }
   }
 };
+
+// Watch for route changes to open modals
+watch(() => route.path, (newPath) => {
+  if (newPath === '/privacy') {
+    modals.value.privacy = true;
+  } else if (newPath === '/terms') {
+    modals.value.terms = true;
+  } else {
+    modals.value.privacy = false;
+    modals.value.terms = false;
+  }
+}, { immediate: true });
 
 // Close modals on Escape key
 document.addEventListener('keydown', (e) => {

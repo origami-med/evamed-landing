@@ -10,7 +10,7 @@
         <p class="text-text-secondary text-sm">{{ config.footer.description }}</p>
       </div>
       <div>
-        <h3 class="font-display mb-4 text-text-primary">Quick Links</h3>
+        <h3 class="font-display mb-4 text-text-primary font-bold">Quick Links</h3>
         <ul class="footer-links list-none flex flex-col gap-2">
           <li v-for="link in config.navigation.footer.quickLinks" :key="link.href">
             <a :href="link.href" class="text-text-secondary no-underline transition-colors duration-300 hover:text-primary">
@@ -20,7 +20,7 @@
         </ul>
       </div>
       <div>
-        <h3 class="font-display mb-4 text-text-primary">Legal</h3>
+        <h3 class="font-display mb-4 text-text-primary font-bold">Legal</h3>
         <ul class="footer-links list-none flex flex-col gap-2">
           <li v-for="link in config.navigation.footer.legal" :key="link.text">
             <a 
@@ -35,7 +35,7 @@
         </ul>
       </div>
       <div class="flex flex-col">
-        <h3 class="font-display mb-4 text-text-primary">Connect</h3>
+        <h3 class="font-display mb-4 text-text-primary font-bold">Connect</h3>
         <div class="footer-social flex gap-4 flex-wrap">
           <a 
             v-for="social in config.footer.social" 
