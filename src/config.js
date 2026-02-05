@@ -52,7 +52,7 @@ export const config = {
     visible: true,
     title: "India's most",
     titleHighlight: "Doctor Friendly EMR",
-    subtitle: "Only our EMR combines an industry-first True Private Network for total local data control, a Forever Free plan to explore without limits, and more features than any competing platform.",
+    subtitle: "Our All-in-One EMR designed for Consultations, Procedures, Reminders, Billing and much more. Experience one-click consultations, drive higher earnings with procedure workflows and Pharmacy, all while maintaining absolute control over your patient data.",
     buttons: [
       { text: "Contact Us", href: "#contact", isPrimary: true },
       { text: "More on Youtube", href: "https://www.youtube.com/@evamed-emr", isPrimary: false, target: "_blank" },
