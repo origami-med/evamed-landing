@@ -192,7 +192,7 @@ export const config = {
         description: "Manage your own in-clinic pharmacy in sync with your consultations.",
         period: "Billed Annually",
         price: "₹550",
-        pricePeriod: "/month*",
+        pricePeriod: "/month/pharmacy*",
         strikethrough: "₹1000",
         taxNote: "* Price excluding taxes",
       },
