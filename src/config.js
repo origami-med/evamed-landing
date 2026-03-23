@@ -9,7 +9,7 @@ export const config = {
     keywords: "EMR, Electronic Medical Records, Doctor Software, Medical Practice Management, India EMR, Healthcare Software, Patient Management",
     author: "Innovea Logitech",
     canonicalUrl: "https://evamed.in",
-    ogImage: "https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png",
+    ogImage: "https://d3r55891avd13u.cloudfront.net/frontend-images/logo.webp",
     twitterCard: "summary_large_image",
   },
 
@@ -19,7 +19,7 @@ export const config = {
     brandName: "evamed",
     companyName: "Innovea Logitech",
     tagline: "India's most Doctor Friendly EMR",
-    logoUrl: "https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png",
+    logoUrl: "https://d3r55891avd13u.cloudfront.net/frontend-images/logo.webp",
     faviconUrl: "https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png",
     fonts: {
       googleFonts: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Mulish:wght@400;500;600;700&display=swap",
