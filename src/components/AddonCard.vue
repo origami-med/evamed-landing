@@ -6,19 +6,40 @@
     <h3 class="font-display text-lg font-extrabold mb-3 text-text-primary">
       {{ addon.title }}
     </h3>
-    <p class="text-text-secondary text-sm mb-4 leading-[1.5]">
+    <p class="text-text-secondary text-sm mb-4 leading-normal">
       {{ addon.description }}
     </p>
-    <p class="pricing-note text-xs text-text-muted mb-2 italic">
+    <p v-if="addon.period" class="pricing-note text-xs text-text-muted mb-2 italic">
       {{ addon.period }}
     </p>
-    <div class="addon-price text-[2.25rem] font-extrabold text-primary font-body mb-2">
+    <div class="addon-price text-[2.25rem] font-extrabold text-primary font-body mb-1 flex items-end justify-center gap-2">
       <span v-if="addon.strikethrough" class="pricing-strikethrough line-through text-text-muted mr-1 text-sm font-medium opacity-70">
         {{ addon.strikethrough }}
       </span>
-      {{ addon.price }}<span class="text-sm font-semibold">{{ addon.pricePeriod }}</span>
+      {{ addon.price }}
+      <span
+        v-if="addon.pricePeriod"
+        class="text-sm font-semibold"
+        :class="addon.pricePeriodClass || ''"
+      >
+        {{ addon.pricePeriod }}
+      </span>
+      <span
+        v-if="addon.inlineNote"
+        class="text-2xl font-medium text-text-muted italic"
+      >
+        {{ addon.inlineNote }}
+      </span>
     </div>
-    <p class="pricing-note text-[0.65rem] text-text-muted mt-2 italic opacity-75">
+    <p
+      v-for="(line, index) in addon.usageLines || []"
+      :key="`${addon.title}-usage-${index}`"
+      class="text-text-secondary text-xs leading-tight italic"
+      :class="index === (addon.usageLines?.length || 0) - 1 ? 'mb-1' : ''"
+    >
+      {{ line }}
+    </p>
+    <p class="pricing-note text-[0.6rem] text-text-muted mt-1 italic opacity-75">
       {{ addon.taxNote }}
     </p>
   </div>
