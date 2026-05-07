@@ -188,6 +188,20 @@ export const config = {
     titleSuffix: "with our Add-ons",
     items: [
       {
+        title: "WhatsApp Reminders and Engagement Campaigns",
+        description: "Reduce no-shows and boost engagement with WhatsApp messaging.",
+        period: "(One-time setup)",
+        price: "₹2000",
+        pricePeriod: "",
+        usageLines: [
+          "Engagement Message - ₹1/delivered message",
+          "Bulk Reminder Messages - ₹0.25/delivered message",
+          "Messaging via your number is free",
+        ],
+        strikethrough: null,
+        taxNote: "* Price excluding taxes",
+      },
+      {
         title: "Integrated Pharmacy",
         description: "Manage your own in-clinic pharmacy in sync with your consultations.",
         period: "Billed Annually",
@@ -204,20 +218,6 @@ export const config = {
         pricePeriod: "/year*",
         strikethrough: null,
         pricePeriodClass: "text-primary",
-        taxNote: "* Price excluding taxes",
-      },
-      {
-        title: "WhatsApp Reminders and Engagement Campaigns",
-        description: "Reduce no-shows and boost engagement with WhatsApp messaging.",
-        period: "(One-time setup)",
-        price: "₹2000",
-        pricePeriod: "",
-        usageLines: [
-          "Engagement Message - ₹1/delivered message",
-          "Bulk Reminder Messages - ₹0.25/delivered message",
-          "Messaging via your number is free",
-        ],
-        strikethrough: null,
         taxNote: "* Price excluding taxes",
       },
     ],
