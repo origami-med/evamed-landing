@@ -5,7 +5,7 @@ export const config = {
   meta: {
     visible: true,
     title: "evamed - India's Most Doctor Friendly EMR",
-    description: "India's most doctor-friendly EMR system. Complete prescriptions in 30 seconds, manage billing, follow-ups, and patient data with complete local control. Forever Free plan available.",
+    description: "India's most doctor-friendly EMR system. Consultation and procedure workflows, reminders, billing, and an integrated pharmacy — all on one platform with absolute control over your patient data.",
     keywords: "EMR, Electronic Medical Records, Doctor Software, Medical Practice Management, India EMR, Healthcare Software, Patient Management",
     author: "Innovea Logitech",
     canonicalUrl: "https://evamed.in",
@@ -18,7 +18,7 @@ export const config = {
     visible: true,
     brandName: "evamed",
     companyName: "Innovea Logitech",
-    tagline: "India's most Doctor Friendly EMR",
+    tagline: "India's Most Doctor Friendly EMR",
     logoUrl: "https://d3r55891avd13u.cloudfront.net/frontend-images/logo.webp",
     faviconUrl: "https://static.wixstatic.com/media/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/f3848c_13b74b6036434bb2abdc727c815216ca%7Emv2.png",
     fonts: {
@@ -50,9 +50,9 @@ export const config = {
   // Hero Section
   hero: {
     visible: true,
-    title: "India's most",
+    title: "India's Most",
     titleHighlight: "Doctor Friendly EMR",
-    subtitle: "Our All-in-One EMR designed for Consultations, Procedures, Reminders, Billing and much more. Experience one-click consultations, drive higher earnings with procedure workflows and Pharmacy, all while maintaining absolute control over your patient data.",
+    subtitle: "evamed has everything you need to drive higher earnings: consultation and procedure workflows, reminders, billing, and an integrated pharmacy. Run your practice with ease from a single platform while maintaining absolute control over your patient data.",
     buttons: [
       { text: "Contact Us", href: "#contact", isPrimary: true },
       { text: "More on Youtube", href: "https://www.youtube.com/@evamed-emr", isPrimary: false, target: "_blank" },
@@ -66,27 +66,28 @@ export const config = {
     subtitle: "Consultations | Procedures | Billing | Reminders | Research | Pharmacy | WhatsApp",
     items: [
       {
-        tag: "Smart Prescriptions",
+        tag: "One Click Prescriptions",
         title: "Complete prescriptions and procedures within 30 seconds",
         bullets: [
           "Instantly access 3L+ medicines and generic names kept up to date",
-          "Quickly Dictate prescriptions with the Power of AI",
+          "Quickly dictate prescriptions with the power of AI",
           "Send prescriptions in local languages instantly with WhatsApp",
           "Capture photos from your phone; compress and save them",
         ],
         videoUrl: "https://www.youtube.com/embed/YznmKYLcJJ8",
-        videoTitle: "evamed Smart Prescriptions Feature",
+        videoTitle: "evamed One Click Prescriptions Feature",
       },
       {
-        tag: "Patient Growth",
+        tag: "Grow Procedure Practice",
         title: "Improve conversion and keep track of procedures",
         bullets: [
           "Create and share Treatment Plans and estimates",
           "Capture and compare before and after images",
           "Create Packages for easy reuse",
+          "Send whatsapp marketing campaigns to your patients",
         ],
-        videoUrl: "https://www.youtube.com/embed/xP5naBDGTxA",
-        videoTitle: "evamed Patient Growth Feature",
+        videoUrl: "https://www.youtube.com/embed/E08joLzXgqU",
+        videoTitle: "evamed Grow Procedure Practice Feature",
       },
       {
         tag: "Practice Management",
@@ -103,9 +104,9 @@ export const config = {
         tag: "Data Security",
         title: "Total Control and Full Flexibility over Patient Data",
         bullets: [
-          "Keep full control with patient data stored locally on computer",
-          "Access patient data from anywhere with evamed True Private Network",
-          "Work seamlessly with your Laptop, mobile, Tab with instant sync",
+          "Keep your patient data private and safe",
+          "Access patient data from anywhere with your unique link",
+          "Passcode and permission based access for staff",
         ],
         videoUrl: "https://www.youtube.com/embed/M81fHd1Jhg8",
         videoTitle: "evamed Data Security Feature",
@@ -116,17 +117,18 @@ export const config = {
   // Pricing Section
   pricing: {
     visible: true,
-    title: "Manage Patients Seamlessly",
-    titleLine2: "Stay Legally Compliant",
+    title: "Invest to run your clinic stress free",
+    titleLine2: null,
     plans: [
       {
-        name: "Forever Free",
+        name: "Unlimited Free Trial",
         price: "Free",
-        period: "Trial at your own pace",
+        period: "for 30 days",
         features: [
-          "All features in Premium Plan",
-          "Access to all future updates",
-          "Add upto 10 patients a month",
+          "No commitment or payment required",
+          "Unrestricted access to all features and updates",
+          "Onboarding support for your staff",
+          "Dedicated contact to help with queries",
         ],
         ctaText: "Contact Us",
         ctaHref: "#contact",
@@ -144,34 +146,34 @@ export const config = {
         isFeatured: true,
         pricingDetails: [
           { label: "Single Doctor", value: "₹1700", strikethrough: "₹2000" },
-          { label: "Two Doctors", value: "+₹500", strikethrough: "+₹1000" },
+          { label: "Additional Doctor", value: "+₹500", strikethrough: "+₹1000" },
         ],
         features: [
           "Single Clinic",
-          "All EMR Features (Consultations, Billing, etc.)",
-          "Multiple device access",
+          "All EMR Features (Consultations, Billing etc.)",
+          "Multiple device access**",
         ],
-        note: "For >2 Doctors, contact for custom pricing",
+        note: "** restricted to 4 users per clinic for private cloud accounts",
         taxNote: "* Price excluding taxes",
         ctaText: "Contact Us",
         ctaHref: "#contact",
       },
       {
         name: "Premium Plus",
-        price: "₹1700",
+        price: "₹2000",
         pricePeriod: "/mo*",
         period: "Billed Annually",
         isFeatured: false,
         pricingDetails: [
-          { label: "Single Doctor", value: "₹1700", strikethrough: "₹2500" },
-          { label: "Two Doctors", value: "+₹1000", strikethrough: "+₹1500" },
+          { label: "Single Doctor", value: "₹2000", strikethrough: "₹2500" },
+          { label: "Additional Doctor", value: "+₹1000", strikethrough: "+₹1500" },
         ],
         features: [
-          "Multiple Clinics",
-          "All EMR Features (Consultations, Billing, etc.)",
-          "Multiple device access",
+          "Two Clinics",
+          "All EMR Features (Consultations, Billing etc.)",
+          "Multiple device access**",
         ],
-        note: "For >2 Doctors, contact for custom pricing",
+        note: "** restricted to 4 users per clinic for private cloud accounts",
         taxNote: "* Price excluding taxes",
         ctaText: "Contact Us",
         ctaHref: "#contact",
@@ -186,6 +188,7 @@ export const config = {
     title: "Unlock the full potential of",
     titleHighlight: "evamed",
     titleSuffix: "with our Add-ons",
+    subtitle: "Extend your practice with powerful optional modules — pay only for what you need.",
     items: [
       {
         title: "WhatsApp Reminders and Engagement Campaigns",
@@ -205,9 +208,9 @@ export const config = {
         title: "Integrated Pharmacy",
         description: "Manage your own in-clinic pharmacy in sync with your consultations.",
         period: "Billed Annually",
-        price: "₹550",
+        price: "₹1000",
         pricePeriod: "/month/pharmacy*",
-        strikethrough: "₹1000",
+        strikethrough: "₹1500",
         taxNote: "* Price excluding taxes",
       },
       {
@@ -218,6 +221,18 @@ export const config = {
         pricePeriod: "/year*",
         strikethrough: null,
         pricePeriodClass: "text-primary",
+        taxNote: "* Price excluding taxes",
+      },
+      {
+        title: "Storage on Private Cloud",
+        description: "Secure cloud storage for your practice data.",
+        period: "Billed Annually",
+        price: "Free",
+        pricePeriod: "for first 15 GB",
+        strikethrough: "₹1275",
+        usageLines: [
+          "Additional Storage in 15 GB increments — ₹1500 per year",
+        ],
         taxNote: "* Price excluding taxes",
       },
     ],
@@ -295,7 +310,7 @@ export const config = {
   // Footer
   footer: {
     visible: true,
-    description: "India's most Doctor Friendly EMR",
+    description: "India's Most Doctor Friendly EMR",
     copyright: "© 2025 by Innovea Logitech",
     social: [
       { 

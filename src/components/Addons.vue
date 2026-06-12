@@ -1,15 +1,35 @@
 <template>
-  <section class="addons bg-bg-primary py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative" id="addons">
-    <div class="container max-w-[1400px] mx-auto">
-      <h2 class="section-title text-center font-display text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 md:mb-8 text-text-primary leading-[1.2] tracking-[-0.02em] relative inline-block w-full">
-        {{ config.addons.title }} <span class="gradient-text">{{ config.addons.titleHighlight }}</span> {{ config.addons.titleSuffix }}
-        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-accent rounded-sm opacity-60"></span>
-      </h2>
-      <div class="addons-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 lg:gap-8 mt-10 md:mt-16 max-w-[1400px] mx-auto">
-        <AddonCard 
-          v-for="addon in config.addons.items" 
+  <section class="addons relative overflow-hidden bg-bg-secondary py-16 md:py-24 px-4 sm:px-6 lg:px-8" id="addons">
+    <!-- Subtle background decoration -->
+    <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <div class="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[rgba(0,201,183,0.06)] blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-[rgba(0,101,195,0.05)] blur-3xl"></div>
+    </div>
+
+    <div class="container relative mx-auto max-w-[1100px]">
+      <div class="addons-header mb-12 w-full text-center md:mb-16">
+        <h2 class="section-title relative inline-block w-full font-display text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.35] tracking-[-0.02em] text-text-primary">
+          <span class="block">
+            {{ config.addons.title }}
+            <span class="gradient-text">{{ config.addons.titleHighlight }}</span>
+          </span>
+          <span class="mt-2 block">{{ config.addons.titleSuffix }}</span>
+        </h2>
+
+        <p
+          v-if="config.addons.subtitle"
+          class="section-subtitle mt-8 w-full text-[clamp(1rem,2vw,1.2rem)] leading-[1.7] text-text-secondary md:mt-10"
+        >
+          {{ config.addons.subtitle }}
+        </p>
+      </div>
+
+      <div class="addons-grid grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+        <AddonCard
+          v-for="(addon, index) in config.addons.items"
           :key="addon.title"
           :addon="addon"
+          :index="index"
         />
       </div>
     </div>
@@ -20,4 +40,3 @@
 import { config } from '../config.js';
 import AddonCard from './AddonCard.vue';
 </script>
-
