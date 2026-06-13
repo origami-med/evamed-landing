@@ -227,11 +227,18 @@ export const config = {
         title: "Storage on Private Cloud",
         description: "Secure cloud storage for your practice data.",
         period: "Billed Annually",
-        price: "Free",
-        pricePeriod: "for first 15 GB",
-        strikethrough: "₹1275",
-        usageLines: [
-          "Additional Storage in 15 GB increments — ₹1500 per year",
+        pricingTiers: [
+          {
+            label: "First 15 GB",
+            price: "Free",
+            strikethrough: "₹1275",
+            suffix: "per year",
+          },
+          {
+            label: "Additional Storage",
+            price: "₹1500",
+            suffix: "per 15 GB / year",
+          },
         ],
         taxNote: "* Price excluding taxes",
       },
