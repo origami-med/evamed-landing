@@ -197,8 +197,8 @@ export const config = {
         price: "₹2000",
         pricePeriod: "",
         usageLines: [
-          "Engagement Message - ₹1/delivered message",
-          "Bulk Reminder Messages - ₹0.25/delivered message",
+          "Engagement Message - ₹1.18/delivered message",
+          "Bulk Reminder Messages - ₹0.3/delivered message",
           "Messaging via your number is free",
         ],
         strikethrough: null,
