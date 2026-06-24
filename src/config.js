@@ -193,7 +193,7 @@ export const config = {
       {
         title: "WhatsApp Reminders and Engagement Campaigns",
         description: "Reduce no-shows and boost engagement with WhatsApp messaging.",
-        period: "(One-time setup)",
+        period: "(One-time setup*)",
         price: "₹2000",
         pricePeriod: "",
         usageLines: [
@@ -231,13 +231,13 @@ export const config = {
           {
             label: "First 15 GB",
             price: "Free",
-            strikethrough: "₹1275",
-            suffix: "per year",
+            strikethrough: "₹1500",
+            suffix: "per year*",
           },
           {
             label: "Additional Storage",
             price: "₹1500",
-            suffix: "per 15 GB / year",
+            suffix: "per 15 GB / year*",
           },
         ],
         taxNote: "* Price excluding taxes",
