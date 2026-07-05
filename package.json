@@ -1,7 +1,7 @@
 {
   "name": "evamed-landing",
   "version": "1.0.0",
-  "description": "evamed - India's Most Doctor Friendly EMR Landing Page",
+  "description": "evamed™ - India's Most Doctor Friendly EMR Landing Page",
   "type": "module",
   "scripts": {
     "dev": "vite",

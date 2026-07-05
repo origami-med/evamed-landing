@@ -1,6 +1,6 @@
-# evamed Landing Page
+# evamed™ Landing Page
 
-A modern, SEO-optimized landing page for evamed - India's Most Doctor Friendly EMR, built with TailwindCSS and Petite Vue.
+A modern, SEO-optimized landing page for evamed™ - India's Most Doctor Friendly EMR, built with TailwindCSS and Petite Vue.
 
 ## Features
 

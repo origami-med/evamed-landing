@@ -4,7 +4,7 @@ export const config = {
   // Meta Information & SEO
   meta: {
     visible: true,
-    title: "evamed - India's Most Doctor Friendly EMR",
+    title: "evamed™ - India's Most Doctor Friendly EMR",
     description: "India's most doctor-friendly EMR system. Consultation and procedure workflows, reminders, billing, and an integrated pharmacy — all on one platform with absolute control over your patient data.",
     keywords: "EMR, Electronic Medical Records, Doctor Software, Medical Practice Management, India EMR, Healthcare Software, Patient Management",
     author: "Innovea Logitech",
@@ -16,7 +16,7 @@ export const config = {
   // Site Branding
   site: {
     visible: true,
-    brandName: "evamed",
+    brandName: "evamed™",
     companyName: "Innovea Logitech",
     tagline: "India's Most Doctor Friendly EMR",
     logoUrl: "https://d3r55891avd13u.cloudfront.net/frontend-images/logo.webp",
@@ -52,7 +52,7 @@ export const config = {
     visible: true,
     title: "India's Most",
     titleHighlight: "Doctor Friendly EMR",
-    subtitle: "evamed has everything you need to drive higher earnings: consultation and procedure workflows, reminders, billing, and an integrated pharmacy. Run your practice with ease from a single platform while maintaining absolute control over your patient data.",
+    subtitle: "evamed™ has everything you need to drive higher earnings: consultation and procedure workflows, reminders, billing, and an integrated pharmacy. Run your practice with ease from a single platform while maintaining absolute control over your patient data.",
     buttons: [
       { text: "Contact Us", href: "#contact", isPrimary: true },
       { text: "More on Youtube", href: "https://www.youtube.com/@evamed-emr", isPrimary: false, target: "_blank" },
@@ -75,7 +75,7 @@ export const config = {
           "Capture photos from your phone; compress and save them",
         ],
         videoUrl: "https://www.youtube.com/embed/YznmKYLcJJ8",
-        videoTitle: "evamed One Click Prescriptions Feature",
+        videoTitle: "evamed™ One Click Prescriptions Feature",
       },
       {
         tag: "Grow Procedure Practice",
@@ -87,7 +87,7 @@ export const config = {
           "Send whatsapp marketing campaigns to your patients",
         ],
         videoUrl: "https://www.youtube.com/embed/E08joLzXgqU",
-        videoTitle: "evamed Grow Procedure Practice Feature",
+        videoTitle: "evamed™ Grow Procedure Practice Feature",
       },
       {
         tag: "Practice Management",
@@ -98,7 +98,7 @@ export const config = {
           "Quickly see trends and research patient data to make informed decisions.",
         ],
         videoUrl: "https://www.youtube.com/embed/pbx590JT2qw",
-        videoTitle: "evamed Practice Management Feature",
+        videoTitle: "evamed™ Practice Management Feature",
       },
       {
         tag: "Data Security",
@@ -109,7 +109,7 @@ export const config = {
           "Passcode and permission based access for staff",
         ],
         videoUrl: "https://www.youtube.com/embed/M81fHd1Jhg8",
-        videoTitle: "evamed Data Security Feature",
+        videoTitle: "evamed™ Data Security Feature",
       },
     ],
   },
@@ -186,7 +186,7 @@ export const config = {
   addons: {
     visible: true,
     title: "Unlock the full potential of",
-    titleHighlight: "evamed",
+    titleHighlight: "evamed™",
     titleSuffix: "with our Add-ons",
     subtitle: "Extend your practice with powerful optional modules — pay only for what you need.",
     items: [
@@ -252,17 +252,17 @@ export const config = {
     subtitle: "What our doctors are saying",
     items: [
       {
-        text: "evamed has transformed my practice completely. I can now complete prescriptions in under 30 seconds, and the AI dictation feature is incredibly accurate. My patients love receiving prescriptions via WhatsApp in their local language. This is truly India's most doctor-friendly EMR!",
+        text: "evamed™ has transformed my practice completely. I can now complete prescriptions in under 30 seconds, and the AI dictation feature is incredibly accurate. My patients love receiving prescriptions via WhatsApp in their local language. This is truly India's most doctor-friendly EMR!",
         author: "Dr. Rajesh Kumar",
         avatar: "https://ui-avatars.com/api/?name=Dr+Rajesh+Kumar&background=00C9B7&color=fff&size=128&bold=true",
       },
       {
-        text: "As a dermatologist, I need to capture and compare before-after images regularly. evamed's patient growth features make this so easy. The treatment plans and estimates help me convert more consultations. The local data storage gives me complete peace of mind about patient privacy.",
+        text: "As a dermatologist, I need to capture and compare before-after images regularly. evamed™'s patient growth features make this so easy. The treatment plans and estimates help me convert more consultations. The local data storage gives me complete peace of mind about patient privacy.",
         author: "Dr. Priya Sharma",
         avatar: "https://ui-avatars.com/api/?name=Dr+Priya+Sharma&background=008FBD&color=fff&size=128&bold=true",
       },
       {
-        text: "Running multiple clinics was a challenge until I found evamed Premium Plus. The True Private Network lets me access patient data from anywhere securely. GST-compliant billing is automatic, and I never miss follow-ups thanks to WhatsApp reminders. Highly recommended!",
+        text: "Running multiple clinics was a challenge until I found evamed™ Premium Plus. The True Private Network lets me access patient data from anywhere securely. GST-compliant billing is automatic, and I never miss follow-ups thanks to WhatsApp reminders. Highly recommended!",
         author: "Dr. Amit Patel",
         avatar: "https://ui-avatars.com/api/?name=Dr+Amit+Patel&background=0065C3&color=fff&size=128&bold=true",
       },
@@ -362,7 +362,7 @@ export const config = {
       content: [
         {
           type: "paragraph",
-          text: "We place the highest importance on respecting and protecting your privacy. Our relationship with you is our most important asset. We want you to be assured of your security and feel comfortable and confident when using the Evamed software (\"Software\"). The objective of this Policy is for you to better understand the type of information we intend to collect from you and the purpose for which the information collected by us will be used; the use of such information by the parties with whom we will share your information; our policy regarding cookies and identity theft instances; the data security practices of the third party website links available on our Platform; the data retention policy and information security measures implemented by us; our disclaimers in relation to Software and the Platform; our policy regarding the changes and updates to this Policy; our policy with respect to withdrawal of your consent; and legal rights and obligations in case of disputes and grievances.",
+          text: "We place the highest importance on respecting and protecting your privacy. Our relationship with you is our most important asset. We want you to be assured of your security and feel comfortable and confident when using the Evamed™ software (\"Software\"). The objective of this Policy is for you to better understand the type of information we intend to collect from you and the purpose for which the information collected by us will be used; the use of such information by the parties with whom we will share your information; our policy regarding cookies and identity theft instances; the data security practices of the third party website links available on our Platform; the data retention policy and information security measures implemented by us; our disclaimers in relation to Software and the Platform; our policy regarding the changes and updates to this Policy; our policy with respect to withdrawal of your consent; and legal rights and obligations in case of disputes and grievances.",
         },
         {
           type: "paragraph",
@@ -394,7 +394,7 @@ export const config = {
         },
         {
           type: "paragraph",
-          text: "1.1 When you use our Platform or avail the Software, we collect the following certain sensitive personal data and information (\"SPDI\") during your use of the Platform: (i) name; (ii) phone number; (iii) medical registration number and specialisation; and (iv) pincode. This SPDI is only collected and used for the purpose of user verification and maintaining safety and legitimacy of usage of the Platform. We do not share your data with any third party and/or store any personal information, any information is stored in your servers and/devices and is not stored by Evamed on its servers. No liability pertaining to the authenticity/ genuineness of the information disclosed will lie on the Company. Further, the Company will not be in any way responsible to verify any information obtained from you.",
+          text: "1.1 When you use our Platform or avail the Software, we collect the following certain sensitive personal data and information (\"SPDI\") during your use of the Platform: (i) name; (ii) phone number; (iii) medical registration number and specialisation; and (iv) pincode. This SPDI is only collected and used for the purpose of user verification and maintaining safety and legitimacy of usage of the Platform. We do not share your data with any third party and/or store any personal information, any information is stored in your servers and/devices and is not stored by Evamed™ on its servers. No liability pertaining to the authenticity/ genuineness of the information disclosed will lie on the Company. Further, the Company will not be in any way responsible to verify any information obtained from you.",
         },
         {
           type: "paragraph",
@@ -685,7 +685,7 @@ export const config = {
         },
         {
           type: "paragraph",
-          text: "This Terms of Use is a legal agreement between you (either an individual or a single entity) and Innovea Logitech Private Limited (\"Licensor\") for the use of Evamed (\"Software\"). This Terms of Use governs your use of the Software provided by the Licensor. By clicking \"I Agree\" or installing or using the Software, you agree to be bound by the terms of this Terms of Use.",
+          text: "This Terms of Use is a legal agreement between you (either an individual or a single entity) and Innovea Logitech Private Limited (\"Licensor\") for the use of Evamed™ (\"Software\"). This Terms of Use governs your use of the Software provided by the Licensor. By clicking \"I Agree\" or installing or using the Software, you agree to be bound by the terms of this Terms of Use.",
         },
         {
           type: "heading",
@@ -860,7 +860,7 @@ export const config = {
         },
         {
           type: "paragraph",
-          text: "You represent and warrant that you have not engaged in, and covenant that you will refrain from, offering promising, paying, giving, authorizing the paying or giving of, soliciting, or accepting money or anything of value, including cash or a cash equivalent (including \"grease\", \"expediting\" or facilitation payments), discounts, rebates, gifts, meals, entertainment, hospitality, use of materials, facilities or equipment, transportation, lodging, or promise of future employment (\"Anything of Value\"), directly or indirectly, to or from: (a) (i) any official or employee of any multinational , national, regional, territorial , provincial or local government in any country , including any official or employee of any government department , agency, commission, or division; (ii) any official or employee of any government-owned or -controlled enterprise; (iii) any official or employee of any public educational, scientific, or research institution; (iv) any political party or official or employee of a political party ; (v) any candidate for public office; (vi) any official or employee of a public international organization; or (vii) any person acting on behalf of or any relative s, family, or household members of any of those listed above (collectively \"Government Official\") to (1) influence any act or decision of a Government Official in his or her official capacity, (2) induce a Government Official to use his or her influence with a government or instrumentality thereof, or (3) otherwise secure any improper advantage; or (b) any person in any manner that would constitute bribery or an illegal kickback , or would otherwise violate applicable anti­ corruption Laws, in each case, in connection with your participation in the Program under these Terms. You represent and warrant that you have not made a voluntary or other disclosure to, or received any notice, request for information , or citation from, or are aware of any past or present investigation of you by a multinational, national, regional, state , municipal , local, territorial, provincial or other governmental department, regulatory authority, commission, board, bureau, agency, ministry, self-regulatory organization or legislative, judicial or administrative body, including any other entities funded in whole or in part by any of the foregoing (\"Governmental Authority\") related to alleged violations of any anti­corruption Laws. Notwithstanding any other provision of these Terms or any applicable non-disclosure agreement, Evamed may disclose the existence and terms of these Terms, as well as information relating to any probable violation of this Section 15 (Anti-Corruption and Trade Compliance), to any Governmental Authority whenever Evamed considers it necessary or prudent to do so.",
+          text: "You represent and warrant that you have not engaged in, and covenant that you will refrain from, offering promising, paying, giving, authorizing the paying or giving of, soliciting, or accepting money or anything of value, including cash or a cash equivalent (including \"grease\", \"expediting\" or facilitation payments), discounts, rebates, gifts, meals, entertainment, hospitality, use of materials, facilities or equipment, transportation, lodging, or promise of future employment (\"Anything of Value\"), directly or indirectly, to or from: (a) (i) any official or employee of any multinational , national, regional, territorial , provincial or local government in any country , including any official or employee of any government department , agency, commission, or division; (ii) any official or employee of any government-owned or -controlled enterprise; (iii) any official or employee of any public educational, scientific, or research institution; (iv) any political party or official or employee of a political party ; (v) any candidate for public office; (vi) any official or employee of a public international organization; or (vii) any person acting on behalf of or any relative s, family, or household members of any of those listed above (collectively \"Government Official\") to (1) influence any act or decision of a Government Official in his or her official capacity, (2) induce a Government Official to use his or her influence with a government or instrumentality thereof, or (3) otherwise secure any improper advantage; or (b) any person in any manner that would constitute bribery or an illegal kickback , or would otherwise violate applicable anti­ corruption Laws, in each case, in connection with your participation in the Program under these Terms. You represent and warrant that you have not made a voluntary or other disclosure to, or received any notice, request for information , or citation from, or are aware of any past or present investigation of you by a multinational, national, regional, state , municipal , local, territorial, provincial or other governmental department, regulatory authority, commission, board, bureau, agency, ministry, self-regulatory organization or legislative, judicial or administrative body, including any other entities funded in whole or in part by any of the foregoing (\"Governmental Authority\") related to alleged violations of any anti­corruption Laws. Notwithstanding any other provision of these Terms or any applicable non-disclosure agreement, Evamed™ may disclose the existence and terms of these Terms, as well as information relating to any probable violation of this Section 15 (Anti-Corruption and Trade Compliance), to any Governmental Authority whenever Evamed™ considers it necessary or prudent to do so.",
         },
         {
           type: "heading",
