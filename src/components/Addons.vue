@@ -1,7 +1,7 @@
 <template>
   <section class="addons bg-bg-primary py-16 md:py-24 px-4 sm:px-6 lg:px-8" id="addons">
     <div class="container mx-auto max-w-[1400px]">
-      <h2 class="section-title relative mb-10 w-full text-center font-display text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.35] tracking-[-0.02em] text-text-primary md:mb-12">
+      <h2 class="section-title relative mb-10 w-full text-center font-display text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-[1.35] tracking-[-0.02em] text-text-primary md:mb-12">
         {{ config.addons.title }}
         <span class="gradient-text">{{ config.addons.titleHighlight }}</span>
         {{ config.addons.titleSuffix }}

@@ -1,7 +1,7 @@
 <template>
   <section class="pricing bg-bg-secondary py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative" id="pricing">
     <div class="container max-w-[1400px] mx-auto">
-      <h2 class="section-title text-center font-display text-[clamp(2rem,5vw,3.5rem)] font-bold mb-6 md:mb-8 text-text-primary leading-[1.2] tracking-[-0.02em] relative inline-block w-full">
+      <h2 class="section-title text-center font-display text-[clamp(1.75rem,4vw,2.75rem)] font-bold mb-6 md:mb-8 text-text-primary leading-[1.2] tracking-[-0.02em] relative inline-block w-full">
         {{ config.pricing.title }}<template v-if="config.pricing.titleLine2"><br>{{ config.pricing.titleLine2 }}</template>
         <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-20 h-1 bg-gradient-accent rounded-sm opacity-60"></span>
       </h2>

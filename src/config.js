@@ -123,7 +123,7 @@ export const config = {
       {
         name: "Unlimited Free Trial",
         price: "Free",
-        period: "for 30 days",
+        period: "for 15 days",
         features: [
           "No commitment or payment required",
           "Unrestricted access to all features and updates",

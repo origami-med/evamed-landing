@@ -21,7 +21,7 @@
     <div class="hero-text-glow absolute inset-0 flex items-center justify-center pointer-events-none z-10"></div>
     
     <div class="hero-content max-w-[1200px] text-center z-20 relative">
-      <h1 class="hero-title font-display text-[clamp(3rem,8vw,6.5rem)] font-bold mb-8 text-text-primary leading-[1.15] tracking-[-0.03em] drop-shadow-[0_2px_20px_rgba(0,201,183,0.1)]">
+      <h1 class="hero-title font-display text-[clamp(2.5rem,6vw,4.75rem)] font-bold mb-8 text-text-primary leading-[1.15] tracking-[-0.03em] drop-shadow-[0_2px_20px_rgba(0,201,183,0.1)]">
         {{ config.hero.title }}<br>
         <span class="highlight block relative">
           {{ config.hero.titleHighlight }}
