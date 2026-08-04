@@ -16,7 +16,7 @@ export const config = {
   // Site Branding
   site: {
     visible: true,
-    brandName: "evamed™",
+    brandName: "evamed™ EMR",
     companyName: "Innovea Logitech",
     tagline: "India's Most Doctor Friendly EMR",
     logoUrl: "https://d3r55891avd13u.cloudfront.net/frontend-images/logo.webp",
